@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 
 --
 -- Cơ sở dữ liệu: `bandienmay`
+CREATE DATABASE IF NOT EXISTS `bandienmay` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `bandienmay`;
 --
 
 -- --------------------------------------------------------
