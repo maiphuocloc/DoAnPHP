@@ -2,10 +2,10 @@
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 07, 2020 at 09:27 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th6 07, 2020 lúc 10:42 AM
+-- Phiên bản máy phục vụ: 10.4.6-MariaDB
+-- Phiên bản PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -17,17 +17,19 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
+/*CREATE DATABASE IF NOT EXISTS bandienmay DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;*/
+/*USE bandienmay;*/
 
 --
--- Database: `phukiendienthoai`
+-- Cơ sở dữ liệu: `phukiendienthoai`
 CREATE DATABASE IF NOT EXISTS phukiendienthoai DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE phukiendienthoai;
+USE phukiendienthoai
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_admin`
+-- Cấu trúc bảng cho bảng `tbl_admin`
 --
 
 CREATE TABLE `tbl_admin` (
@@ -38,16 +40,16 @@ CREATE TABLE `tbl_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_admin`
+-- Đang đổ dữ liệu cho bảng `tbl_admin`
 --
 
 INSERT INTO `tbl_admin` (`admin_id`, `email`, `password`, `admin_name`) VALUES
-(1, 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'Hiếu Tấn');
+(1, 'admin@gmail.com', '202cb962ac59075b964b07152d234b70', 'Admin');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_baiviet`
+-- Cấu trúc bảng cho bảng `tbl_baiviet`
 --
 
 CREATE TABLE `tbl_baiviet` (
@@ -60,7 +62,7 @@ CREATE TABLE `tbl_baiviet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_baiviet`
+-- Đang đổ dữ liệu cho bảng `tbl_baiviet`
 --
 
 INSERT INTO `tbl_baiviet` (`baiviet_id`, `tenbaiviet`, `tomtat`, `noidung`, `danhmuctin_id`, `baiviet_image`) VALUES
@@ -73,7 +75,7 @@ INSERT INTO `tbl_baiviet` (`baiviet_id`, `tenbaiviet`, `tomtat`, `noidung`, `dan
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_category`
+-- Cấu trúc bảng cho bảng `tbl_category`
 --
 
 CREATE TABLE `tbl_category` (
@@ -82,7 +84,7 @@ CREATE TABLE `tbl_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_category`
+-- Đang đổ dữ liệu cho bảng `tbl_category`
 --
 
 INSERT INTO `tbl_category` (`category_id`, `category_name`) VALUES
@@ -98,11 +100,8 @@ INSERT INTO `tbl_category` (`category_id`, `category_name`) VALUES
 
 -- --------------------------------------------------------
 
-
--- --------------------------------------------------------
-
 --
--- Table structure for table `tbl_donhang`
+-- Cấu trúc bảng cho bảng `tbl_donhang`
 --
 
 CREATE TABLE `tbl_donhang` (
@@ -117,7 +116,7 @@ CREATE TABLE `tbl_donhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_donhang`
+-- Đang đổ dữ liệu cho bảng `tbl_donhang`
 --
 
 INSERT INTO `tbl_donhang` (`donhang_id`, `sanpham_id`, `soluong`, `mahang`, `khachhang_id`, `ngaythang`, `tinhtrang`, `huydon`) VALUES
@@ -155,7 +154,7 @@ INSERT INTO `tbl_donhang` (`donhang_id`, `sanpham_id`, `soluong`, `mahang`, `kha
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_giaodich`
+-- Cấu trúc bảng cho bảng `tbl_giaodich`
 --
 
 CREATE TABLE `tbl_giaodich` (
@@ -170,7 +169,7 @@ CREATE TABLE `tbl_giaodich` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_giaodich`
+-- Đang đổ dữ liệu cho bảng `tbl_giaodich`
 --
 
 INSERT INTO `tbl_giaodich` (`giaodich_id`, `sanpham_id`, `soluong`, `magiaodich`, `ngaythang`, `khachhang_id`, `tinhtrangdon`, `huydon`) VALUES
@@ -193,7 +192,7 @@ INSERT INTO `tbl_giaodich` (`giaodich_id`, `sanpham_id`, `soluong`, `magiaodich`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_giohang`
+-- Cấu trúc bảng cho bảng `tbl_giohang`
 --
 
 CREATE TABLE `tbl_giohang` (
@@ -206,7 +205,7 @@ CREATE TABLE `tbl_giohang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_giohang`
+-- Đang đổ dữ liệu cho bảng `tbl_giohang`
 --
 
 INSERT INTO `tbl_giohang` (`giohang_id`, `tensanpham`, `sanpham_id`, `giasanpham`, `hinhanh`, `soluong`) VALUES
@@ -217,7 +216,7 @@ INSERT INTO `tbl_giohang` (`giohang_id`, `tensanpham`, `sanpham_id`, `giasanpham
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_khachhang`
+-- Cấu trúc bảng cho bảng `tbl_khachhang`
 --
 
 CREATE TABLE `tbl_khachhang` (
@@ -232,7 +231,7 @@ CREATE TABLE `tbl_khachhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_khachhang`
+-- Đang đổ dữ liệu cho bảng `tbl_khachhang`
 --
 
 INSERT INTO `tbl_khachhang` (`khachhang_id`, `name`, `phone`, `address`, `note`, `email`, `password`, `giaohang`) VALUES
@@ -250,7 +249,7 @@ INSERT INTO `tbl_khachhang` (`khachhang_id`, `name`, `phone`, `address`, `note`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_sanpham`
+-- Cấu trúc bảng cho bảng `tbl_sanpham`
 --
 
 CREATE TABLE `tbl_sanpham` (
@@ -268,11 +267,10 @@ CREATE TABLE `tbl_sanpham` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_sanpham`
+-- Đang đổ dữ liệu cho bảng `tbl_sanpham`
 --
 
 INSERT INTO `tbl_sanpham` (`sanpham_id`, `category_id`, `sanpham_name`, `sanpham_chitiet`, `sanpham_mota`, `sanpham_gia`, `sanpham_giakhuyenmai`, `sanpham_active`, `sanpham_hot`, `sanpham_soluong`, `sanpham_image`) VALUES
-(28, 0, 'Ốp lưng trái cây nổi Dành cho Oppo F11,F11 Pro,A9 2020,A5 2020,A1k,Realme 5,Realme 3,Realme 3 Pro,Realme 2,Realme 5 Pro,Realme C2,A5s,A7,A3s,F3,F3 Plus,F9,F5,A83,F1s,A71,(Neo 9) A37,(Neo 9s) A39,(F3 Lite) A57', '', '', '70000', '45000', 0, 0, 10, '1.jpg'),
 (29, 23, 'Ốp lưng trái cây nổi Dành cho Oppo F11,F11 Pro,A9 2020,A5 2020,A1k,Realme 5,Realme 3,Realme 3 Pro,Realme 2,Realme 5 Pro,Realme C2,A5s,A7,A3s,F3,F3 Plus,F9,F5,A83,F1s,A71,(Neo 9) A37,(Neo 9s) A39,(F3 Lite) A57', 'Thương hiệu	OEM\r\nXuất xứ thương hiệu	Hong Kong\r\nXuất xứ	Hong Kong\r\nThương hiệu thiết bị phù hợp	Oppo\r\nThiết bị phù hợp	Oppo F3 Plus, Oppo F3, Oppo F1s, Oppo F5, Oppo A71, Oppo A39-Neo 9s, Oppo A57-F3 Lite, Oppo A37-Neo 9, Oppo A83, OPPO F9, Oppo A3s, Oppo A7, Realme 2, Realme 3 Pro, Realme 3, OPPO F11 Pro, OPPO F11, Oppo A5s, Oppo A1K, Realme C2, Realme 5, Realme 5 Pro, Oppo A9 2020, OPPO A5 (2020)\r\nSKU	9045609883143', '\r\n  *  Ốp được làm bằng nhựa dẻo\r\n  * Mặt lưng nhám chống trơn trợt\r\n  *  Sản phẩm là sự kết hợp tinh tế giữa chất liệu nhựa dẻo silicon và hình trái cây nổi\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ..', '70000', '45000', 0, 0, 10, '1.jpg'),
 (30, 23, 'Ốp lưng dẻo cho Iphone XS Max - Dragon 03', 'Thương hiệu	OEM\r\nXuất xứ	Việt Nam\r\nThương hiệu thiết bị phù hợp	Apple\r\nThiết bị phù hợp	iPhone XS MAX\r\nSKU	4038834529110', 'Nếu bạn đang sở hữu một chiếc điện thoại Apple Iphone XS Max thời thượng thì chắc hẳn bạn sẽ lo lắng nó sẽ dễ bị trầy xước khi va chạm hay rơi xuống đất. Vìvậy, việc sử dụng ốp lưng để bảo vệ và giữ điện thoại là rất cần thiết..\r\n\r\nKhông những thế, ngoài việc giúp người dùng bảo vệ Chiếc Điện Thoại Con Cưng – Iphone XS Max, ốp lưng còn được xem như một món đồ trang sức cho điện thoại, giúp chủ nhân của nó thể hiện phong cách và cá tính riêng của mình.\r\n\r\nỐp lưng được làm từ chất liệu silicone cao cấp, các cạnh viền ôm khít thân máy.\r\n\r\nViền ốp dẻo, bo kín phần lưng và phần viền máy, bảo vệ chiếc điện thoại của bạn khỏi trầy xước khi vô tình làm rơi máy hay va chạm với vật cứng.\r\n\r\nViền ốp dẻo còn giúp bạn tháo lắp máy dễ dàng mà không lo trầy xước máy.\r\n\r\nCác cạnh viền ốp lưng trong suốt nên dù sử dụng ốp lưng nhưng vẫn giữ được màu sắc và thiết kế của điện thoại.\r\n\r\nCác chi tiết của ốp lưng (camera, nút nguồn, nút âm lượng,lỗ sạc, lỗ cắm tai nghe..) được thiết kế tỉ mỉ, chính xác tới từng chi tiết, giúp bạn sử dụng điện thoại dễ dàng mà không gặp bất kì trở ngại gì.\r\n\r\nĐặc biệt, hình in sắc nét, màu sắc trung thực, đảm bảo không bong tróc, phai màu.\r\n\r\nVà nếu bạn là một người cẩn thận và mong muốn chiếc điện thoại Iphone XSMax của mình luôn như mới, thì sử dụng ốp lưng không chỉ giúp bảo vệ, mà nó còn mang đến cảm giác yên tâm và thoải mái khi sử dụng.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '77000', '74400', 0, 0, 20, '2.jpg'),
 (31, 23, 'Ốp lưng dẻo cho Apple iPhone 7 Plus _Raccoon 01', 'Thương hiệu	OEM\r\nXuất xứ	Việt Nam\r\nThương hiệu thiết bị phù hợp	Apple\r\nThiết bị phù hợp	iPhone 7 Plus\r\nSKU	8156271119452', 'Nếu bạn đang sở hữu một chiếc Smartphone thì chắc hẳn bạn sẽ lo lắng nó sẽ bị trầy xước khi va chạm hay vô tình rơi xuống đất. Vì vậy, việc sử dụng ốp lưng để bảo vệ và giữ cho điện thoại là rất cần thiết.\r\n\r\nKhông những thế, ngoài việc giúp người dùng bảo vệ điện thoại, ốp lưng còn là một món đồ trang sức cho điện thoại, giúp chủ nhân của nó thể hiện phong cách và cá tính riêng của mình.\r\n\r\nỐp lưng được làm từ chất liệu silicone cao cấp, các cạnh viền ôm khít thân máy.\r\n\r\nViền ốp dẻo, bo kín phần lưng và phần viền máy, bảo vệ chiếc điện thoại của bạn khỏi trầy xước khi vô tình làm rơi máy hay va chạm với vật cứng.\r\n\r\nViền ốp dẻo còn giúp bạn tháo lắp máy dễ dàng mà không lo trầy xước máy.\r\n\r\nCác cạnh viền ốp lưng trong suốt nên dù sử dụng ốp lưng nhưng vẫn giữ được màu sắc và thiết kế của điện thoại.\r\n\r\nCác chi tiết của ốp lưng (camera, nút nguồn, nút âm lượng,lỗ sạc, lỗ cắm tai nghe..) được thiết kế tỉ mỉ, chính xác tới từng chi tiết, giúp bạn sử dụng điện thoại dễ dàng mà không gặp bất kì trở ngại gì.\r\n\r\nĐặc biệt, hình in sắc nét, màu sắc trung thực, đảm bảo không bong tróc, phai màu.\r\n\r\nVà nếu bạn là một người cẩn thận và mong muốn chiếc điện thoại của mình luôn như mới, thì sử dụng ốp lưng không chỉ giúp bảo vệ, mà nó còn mang đến cảm giác yên tâm và thoải mái khi sử dụng.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '81000', '79200', 0, 0, 30, '3.jpg'),
@@ -283,7 +281,6 @@ INSERT INTO `tbl_sanpham` (`sanpham_id`, `category_id`, `sanpham_name`, `sanpham
 (36, 22, 'Pin sạc dự phòng 10.000 MAh, Led hiển thị dung lượng, mặt cường lực', 'Thương hiệu	OEM\r\nSKU	6675387772631\r\nDung lượng pin	10000', 'Pin sạc dự phòng 10.000 MAh\r\n\r\nLed hiển thị dung lượng\r\n\r\nMặt cường lực\r\n\r\n2 ngõ ra USB\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '269000', '179000', 0, 0, 10, '8.jpg'),
 (37, 22, 'Sạc dự phòng Pisen Mini Power Star 10000mAh màu ngẫu nhiên - Hàng chính hãng', 'Thương hiệu	Pisen\r\nXuất xứ	Trung Quốc\r\nSKU	5142321477750\r\nDung lượng pin	10000\r\nModel	PowerStar10000mAh\r\nTrọng lượng	500', 'Siêu sạc Pisen Mini Power Star 10000mAh.\r\n\r\n+Nhỏ tẹo mà dung lượng khủng.\r\n\r\n+Nhỏ tẹo mà nhẹ tênh.\r\n\r\n+Dòng sạc dự phòng dành cho các bạn luôn mang theo bên người dễ dàng, gọn nhẹ.\r\n\r\n+Dung lượng pin lên tới 10000mah.\r\n\r\n+Hiệu năng sạc 98% sạc được ~ 4 lần cho iPhone 6 Bạn dùng để sạc điện thoại\r\n\r\n+ Để soi gương , Rất nhiều chức năng đặc biệt được tích hợp trên sạc\r\n\r\n+Thiết kế với màu sắc phong cách trẻ trung, sôi động, tươi sáng. Vỏ sạc sáng bóng, chống dính vân tay\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '650000', '490000', 0, 0, 50, '9.jpg'),
 (38, 22, 'Pin dự phòng polymer Romoss LT20PS 20000mAh nhỏ gọn (Trắng) HÀNG CHÍNH HÃNG', 'Thương hiệu	ROMOSS\r\nXuất xứ thương hiệu	Trung Quốc\r\nXuất xứ	Trung Quốc\r\nSKU	8687305494738\r\nDung lượng pin	20000\r\nĐầu vào	TypeC/ microUSB/ lightning\r\nĐầu ra	USB\r\nModel	LT20PS\r\nTrọng lượng	400 gam\r\nChất liệu	nhựa', 'Romoss LT20PS là phiên bản rút gọn của model LT20 (với kích thước nhỏ gọn hơn)\r\nRất thích hợp cho các bạn nữ với kích thước và khối lượng nhỏ nhất trong các dòng pin dự phòng có dung lượng 20000mAh trên thị trường hiện tại.\r\nSử dụng lõi pin polymer siêu bền.\r\nĐiện áp vào 3 cổng (microUSB- typeC - lightning): 5V/2.1A\r\nQuý khách nên sử dụng cốc sạc 2A trở lên để pin nhanh đầy và trách tình trạng không đầy pin khi sử dụng cốc 1A\r\nĐiện áp ra cổng 1: 5V/1A\r\nĐiện áp ra cổng 2: 5V/2.1A max\r\nKích thước: 145x 69 x 29 mm\r\nTrọng lượng : 445 gam\r\nHỗ trợ: điện thoại di động, điện thoại thông minh, MP3, sản phẩm kỹ thuật số khác với 5V đầu vào.\r\nLuu ý: sản phẩm không bao gồm cáp sạc từ nhà sản xuất\r\niá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '600000', '445000', 0, 0, 35, '10.jpeg'),
-(39, 0, 'SẠC DỰ PHÒNG KHÔNG DÂY XIAOMI 10000MAH PLM11ZM 2019 - Hàng Chính Hãng', 'Thương hiệu	Xiaomi\r\nSKU	7305187279526\r\nDung lượng pin	10000', 'Sạc dự phòng Xiaomi hỗ trợ sạc không dây dung lượng 10.000mAh 2019 đây chính là công nghệ pin dự phòng cho tương lai, nếu điện thoại bạn cố hỗ trợ sạc không dây thì đây là 1 cục pin dự phòng quá tuyệt vời, chỉ cần đặt lên trên là có thể sạc cho điện thoại, sạc vừa nhanh dung lượng pin lớn 10000mAh...\r\n\r\nPin dự phòng không dây của Xiaomi có dung lượng 10.000mAh và cho công suất sạc không dây tối đa là 10W. Do sử dụng chuẩn Qi, cho nên viên pin dự phòng này hỗ trợ không phải riêng cho Mi 9 mà còn rất nhiều chiếc smartphone khác, trong đó có cả Apple và Samsung Galaxy. \r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '', '', 0, 0, 0, '11.jpg'),
 (40, 22, 'SẠC DỰ PHÒNG KHÔNG DÂY XIAOMI 10000MAH PLM11ZM 2019 - Hàng Chính Hãng', 'Thương hiệu	Xiaomi\r\nSKU	7305187279526\r\nDung lượng pin	10000', 'Sạc dự phòng Xiaomi hỗ trợ sạc không dây dung lượng 10.000mAh 2019 đây chính là công nghệ pin dự phòng cho tương lai, nếu điện thoại bạn cố hỗ trợ sạc không dây thì đây là 1 cục pin dự phòng quá tuyệt vời, chỉ cần đặt lên trên là có thể sạc cho điện thoại, sạc vừa nhanh dung lượng pin lớn 10000mAh...\r\n\r\nPin dự phòng không dây của Xiaomi có dung lượng 10.000mAh và cho công suất sạc không dây tối đa là 10W. Do sử dụng chuẩn Qi, cho nên viên pin dự phòng này hỗ trợ không phải riêng cho Mi 9 mà còn rất nhiều chiếc smartphone khác, trong đó có cả Apple và Samsung Galaxy. \r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '1000000', '990000', 0, 0, 25, '11.jpg'),
 (41, 22, 'Sạc dự phòng Energizer 10,000mAh /3.7V Li-Polymer - UE10032PR - Hàng Chính Hãng', 'Thương hiệu	Energizer\r\nKích thước	\r\n\r\nKích thước: 93 x 64 x 18mm\r\nSKU	8125478236422\r\nDung lượng pin	10000\r\nModel	UE10032', '\r\n\r\n    Tính năng:\r\n        Thiết kế Cardsize siêu nhỏ gọn, nằm trọn trong lòng bàn tay - chiều dài chỉ đúng bằng chiếc namecard\r\n        Bề mặt phủ chất liệu platinum cao cấp, giúp hạn chế tối đa trầy xước trong quá trình sử dụng.\r\n        Tích hợp 2 cổng sạc, tích hợp công nghệ Fast Charge giúp sạc thiết bị nhanh hơn 40%.\r\n        Đèn LED thông báo tình trạng pin, mỗi vạch tương ứng với 25% mức pin\r\n        Tích hợp công nghệ Auto voltage sensing - tự động cảm biến điện áp giúp tương thích với mọi thiết bị di động.\r\n        Chứng nhận về an toàn & chống cháy nổ: CE, FCC, ETL, CB, EAC, RoHS, Reach, ERP6, DOE6.\r\n    Thông số kỹ thuật:\r\n        Mã sản phẩm: UE10032\r\n        Dung lượng Pin: 10,000mAh\r\n        Loại Pin: Lithium Polymer\r\n        Input: 5V, 2.0A\r\n        Output: 5V, 2.1A\r\n        Kích thước: 93 x 64 x 18mm\r\n        Trọng lượng: 197g ± 10g\r\n\r\nBộ sản phẩm gồm:\r\n\r\n    Pin sạc dự phòng Energizer 10,000mAh - UE10032\r\n    Cáp USB Micro\r\n    Sách hướng dẫn sử dụng\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '800000', '390000', 0, 0, 40, '12.png'),
 (42, 21, 'Bàn phím giả cơ kèm chuột KMX50 Gaming mouse PF170', 'Thương hiệu	OEM\r\nModel	PF170\r\nSKU	4889788229461', 'Bàn phím giả cơ kèm chuột KMX50 Gaming mouse PF170 \r\n> Trỏ lăn chuột 3D siêu mượt, không trơn trượt\r\n> Bàn phím giả cơ kèm chuột KMX50 Gaming mouse PF170 cực nhạy, thiết kế thân thiện,dễ dàng sử dụng, có thể dùng cho mọi loại máy và hệ điều hành mà không cần phải cài đặt.\r\n\r\n> Bàn phím giả cơ kèm chuột KMX50 Gaming mouse PF170 thẻ-bit thiết kế nhiều lớp đệm êm tay khi sử dụng không gây cảm giác mỏi khi sử dụng lâu.\r\n\r\n> Màu đèn chuột thay đổi liên tục nhiều màu\r\n\r\n> Chuột quang dùng chip hiệu suất cao, độ phân giải lên đến 1600DPI, có thể được áp dụng cho tất cả các loại trò chơi, định vị chính xác.\r\nBàn phím giả cơ kèm chuột KMX50 Gaming mouse PF170 2', '700000', '200000', 0, 0, 5, '13.jpg'),
@@ -294,7 +291,6 @@ INSERT INTO `tbl_sanpham` (`sanpham_id`, `category_id`, `sanpham_name`, `sanpham
 (47, 21, 'Bộ Bàn Phím Chuột Không Dây 2.4GHz Ultra-Thin D6U4', 'Thương hiệu	OEM\r\nSKU	8227620937598', 'Cắm và chơi, Tìm Thấy các USB nano receiver, cắm nó vào cổng USB của thiết bị của bạn. Sau đó nó sẽ tự động ghép nối và kết nối.\r\nBàn phím là nhỏ gọn, tiện dụng, thiết kế thời trang và tốt-xây dựng. Thì thầm yên tĩnh đánh máy và nhấp chuột vào cho cả hai bàn phím và chuột. Nó cung cấp một khá và môi trường thoải mái cho bạn khi bạn sử dụng nó vào ban đêm.\r\nBàn phím và chuột được thiết kế để được cầm tay, phù hợp dễ dàng vào một túi tay, hoặc máy tính xách tay túi cho dễ dàng vận chuyển.\r\n2.4 gam Không Dây cung cấp lên đến 10 mét kết nối, cung cấp thuận tiện không có vấn đề nơi bạn loại.\r\nLƯU Ý: Các Nano-receiver có thể được tìm thấy trong ngăn chứa pin của bàn phím/chuột. Yêu cầu 4 pin AAA (2 cho mỗi đơn vị), pin KHÔNG bao gồm\r\n\r\n\r\nLoại: Không Dây Thiết Lập Bộ\r\nVới các kết nối máy tính: bàn phím không dây, chuột không dây\r\nGiao Diện bàn phím: Không Dây\r\nChuột giao diện: Không Dây\r\nLàm việc: Ống Điện Quang\r\nQuang điện độ phân giải: 1200 dpi\r\nTiêu Chuẩn không dây: 2.4 ghz\r\nKích Thước bàn phím: 370*142*9 mét\r\nBàn phím Trọng Lượng: 400 gam\r\nTuổi Thọ Key: 5 triệu cliks\r\nKết nối Phạm Vi: 10 m\r\nSố Kênh: 16\r\nGiao Diện USB: 1.1-2.0\r\nTần số vô tuyến Điện: 3db\r\nNhiệt độ:-40-+ 85 Độ C.\r\nPin: Hai kích thước pin AA (Không bao gồm)\r\nHiện tại: 5mA\r\nĐiện áp: 3 v\r\nCho dù để hỗ trợ plug and play: hỗ trợ\r\nLà có một đa phương tiện phím chức năng: Yes\r\nCho dù để hỗ trợ ergonomics: hỗ trợ\r\nCác tính năng: ultra-mỏng câm\r\nÁp dụng đối với: nhà, trò chơi, máy tính xách tay, văn phòng sử dụng\r\n\r\nSản Phẩm Bao Gồm:\r\n01 Chuột\r\n01 Bàn phím\r\n01 Đầu Thu USB\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '700000', '600000', 0, 0, 60, '18.jpg'),
 (48, 20, 'Dock Sạc Pin Đôi Kèm Cáp Cho Camera Hành Trình Sjcam SJ4000 & SJ5000 & M10 - Hàng Chính Hãng', 'Thương hiệu	SJCAM\r\nKích thước	\r\n\r\nKhối lượng gói hàng (kg): 0.34\r\n\r\nKích thước đóng gói (cm): 5 x 10 x 5\r\nModel	Dock sac Sjcam doi\r\nSKU	6042538341006', 'Đồ sạc - cốc sạc cho pin của camera hành trình thể thao SJCAM SJ4000 SJ5000 wifi.\r\n\r\nSạc được 2 pin 1 lần, kết nối sạc qua cổng mini USB nhỏ thông dụng (giống dây sạc điện thoại hiện nay)\r\n\r\nMỗi bộ sạc chưa có dây đi kèm, các bạn có thể dùng dây sạc điện thoại cổng mini usb để sạc loại cốc này.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '120000', '99000', 0, 0, 70, '19.jpg'),
 (49, 20, 'Dock Sạc Pin Đôi Kèm Cáp Cho Camera Hành Trình Sjcam M20 - Hàng Chính Hãng', 'Thương hiệu	SJCAM\r\nKích thước	\r\n\r\nKhối lượng gói hàng (kg): 0.2\r\n\r\nKích thước đóng gói (cm): 6 x 2 x 4\r\nModel	Dock sac Sjcam M20\r\nSKU	6303329803838', 'Dock sạc là phụ kiện cần thiết cho tất cả thiết bị mà đặc biệt là dành cho chiếc camera hành trình. Với tần suất sử dụng xuyên suốt trong mỗi chuyến đi, việc nạp pin cho chiếc camera là rất quan trọng, do đó SJCAM đã cho ra thị trường bộ sản phẩm Dock sạc pin đôi kèm cáp cho camera hành trình Sjcam M20\r\n\r\nSạc hai pin cùng lúc\r\n\r\nViệc sạc hai pin cùng lúc với poket thân thiện, phụ kiện sẽ giúp người dụng tiết kiệm được khá nhiều thời gian sạc camera. Nhờ đó, việc ghi hình, chụp ảnh trong suốt chuyến đi cũng trở nên dễ dàng hơn\r\n\r\nPhù hợp với camera hành trình SJCAM M20\r\n\r\nVới hai cổng đầu vào Micro USB và Mini USB, phụ kiện thích hợp với các sản phẩm camera SJCAM M20 cùng chế độ hiển thị đèn đỏ khi sạc, đèn xanh sạc đầy, bạn dễ dàng nhận biết được tình trạng sạc pin của thiết bị\r\n\r\nSản phẩm nhỏ gọn\r\n\r\nThiết kế sản phẩm với kích thước 5,1 * 3,6 * 1,7cm làm cho phụ kiện cực kỳ nhỏ gọn, tiện lợi giúp cho người dùng dễ dàng bỏ vào túi nhỏ mang đi trong suốt chuyến đi\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '230000', '200000', 0, 0, 100, '20.png'),
-(50, 0, 'Dây Cáp Sạc Sợi Nylon Loại C (2M USB 3.1)', 'Thương hiệu	OEM\r\nXuất xứ thương hiệu	China\r\nXuất xứ	China\r\nSKU	8601524468899', 'Specification:\r\nColor: Silver / Blue / Rose / Orange / Green (optional)\r\nMaterial: nylon woven + aluminum interface\r\nVoltage: DC 5V\r\nCurrent: 2A\r\nApplies to: type-c interface device\r\nWire: copper wire core\r\nProduct size: Length is 200cm; Wire diameter is 3.8mm\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '', '', 0, 0, 100, ''),
 (51, 20, 'Dây Cáp Sạc Sợi Nylon Loại C (2M USB 3.1)', 'Specification:\r\nColor: Silver / Blue / Rose / Orange / Green (optional)\r\nMaterial: nylon woven + aluminum interface\r\nVoltage: DC 5V\r\nCurrent: 2A\r\nApplies to: type-c interface device\r\nWire: copper wire core\r\nProduct size: Length is 200cm; Wire diameter is 3.8mm\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', 'Thương hiệu	OEM\r\nXuất xứ thương hiệu	China\r\nXuất xứ	China\r\nSKU	8601524468899', '240000', '100000', 0, 0, 100, '21.jpg'),
 (52, 20, 'Dây Cáp USB Hỗ Trợ Sạc Nhanh Type C (2.4A)', 'Thương hiệu	OEM\r\nXuất xứ	China\r\nSKU	3024072277037', 'Description:\r\nColor: red, black, blue\r\nLength: 1m\r\nMaterial: Weaving\r\nCurrent: 2.4A\r\nInterface: type-c\r\nFunction: fast charging, data transmission, double-sided blind insertion\r\n\r\nNotes:\r\n1.The real color of the item may be slightly different from the pictures shown on website caused by many factors such as brightness of your monitor and light brightness.\r\n2.Please allow slight deviation for the measurement data.\r\n3.Thanks for your understanding.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '295000', '120000', 0, 0, 60, '20.jpg'),
 (53, 20, 'Cáp Sạc Collen Apple', 'Thương hiệu	Collen\r\nSKU	7177536223111', '\r\nInterface support: Apple\r\nMaterial: weaving\r\nType: Single loading\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '160000', '130000', 0, 0, 53, '22.jpg'),
@@ -309,7 +305,7 @@ INSERT INTO `tbl_sanpham` (`sanpham_id`, `category_id`, `sanpham_name`, `sanpham
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_slider`
+-- Cấu trúc bảng cho bảng `tbl_slider`
 --
 
 CREATE TABLE `tbl_slider` (
@@ -320,7 +316,7 @@ CREATE TABLE `tbl_slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_slider`
+-- Đang đổ dữ liệu cho bảng `tbl_slider`
 --
 
 INSERT INTO `tbl_slider` (`slider_id`, `slider_image`, `slider_caption`, `slider_active`) VALUES
@@ -328,126 +324,117 @@ INSERT INTO `tbl_slider` (`slider_id`, `slider_image`, `slider_caption`, `slider
 (2, 'b3.jpg', 'Slider 50%', 0);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `tbl_admin`
+-- Chỉ mục cho bảng `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `tbl_baiviet`
+-- Chỉ mục cho bảng `tbl_baiviet`
 --
 ALTER TABLE `tbl_baiviet`
   ADD PRIMARY KEY (`baiviet_id`);
 
 --
--- Indexes for table `tbl_category`
+-- Chỉ mục cho bảng `tbl_category`
 --
 ALTER TABLE `tbl_category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Indexes for table `tbl_danhmuc_tin`
---
-
---
--- Indexes for table `tbl_donhang`
+-- Chỉ mục cho bảng `tbl_donhang`
 --
 ALTER TABLE `tbl_donhang`
   ADD PRIMARY KEY (`donhang_id`);
 
 --
--- Indexes for table `tbl_giaodich`
+-- Chỉ mục cho bảng `tbl_giaodich`
 --
 ALTER TABLE `tbl_giaodich`
   ADD PRIMARY KEY (`giaodich_id`);
 
 --
--- Indexes for table `tbl_giohang`
+-- Chỉ mục cho bảng `tbl_giohang`
 --
 ALTER TABLE `tbl_giohang`
   ADD PRIMARY KEY (`giohang_id`);
 
 --
--- Indexes for table `tbl_khachhang`
+-- Chỉ mục cho bảng `tbl_khachhang`
 --
 ALTER TABLE `tbl_khachhang`
   ADD PRIMARY KEY (`khachhang_id`);
 
 --
--- Indexes for table `tbl_sanpham`
+-- Chỉ mục cho bảng `tbl_sanpham`
 --
 ALTER TABLE `tbl_sanpham`
   ADD PRIMARY KEY (`sanpham_id`);
 
 --
--- Indexes for table `tbl_slider`
+-- Chỉ mục cho bảng `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
   ADD PRIMARY KEY (`slider_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `tbl_admin`
+-- AUTO_INCREMENT cho bảng `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tbl_baiviet`
+-- AUTO_INCREMENT cho bảng `tbl_baiviet`
 --
 ALTER TABLE `tbl_baiviet`
   MODIFY `baiviet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `tbl_category`
+-- AUTO_INCREMENT cho bảng `tbl_category`
 --
 ALTER TABLE `tbl_category`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `tbl_danhmuc_tin`
---
-
-
---
--- AUTO_INCREMENT for table `tbl_donhang`
+-- AUTO_INCREMENT cho bảng `tbl_donhang`
 --
 ALTER TABLE `tbl_donhang`
   MODIFY `donhang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
--- AUTO_INCREMENT for table `tbl_giaodich`
+-- AUTO_INCREMENT cho bảng `tbl_giaodich`
 --
 ALTER TABLE `tbl_giaodich`
   MODIFY `giaodich_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `tbl_giohang`
+-- AUTO_INCREMENT cho bảng `tbl_giohang`
 --
 ALTER TABLE `tbl_giohang`
   MODIFY `giohang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tbl_khachhang`
+-- AUTO_INCREMENT cho bảng `tbl_khachhang`
 --
 ALTER TABLE `tbl_khachhang`
   MODIFY `khachhang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `tbl_sanpham`
+-- AUTO_INCREMENT cho bảng `tbl_sanpham`
 --
 ALTER TABLE `tbl_sanpham`
   MODIFY `sanpham_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
--- AUTO_INCREMENT for table `tbl_slider`
+-- AUTO_INCREMENT cho bảng `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
   MODIFY `slider_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
