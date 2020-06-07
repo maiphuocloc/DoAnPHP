@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `phukiendientu`
+-- Database: `phukiendienthoai`
 CREATE DATABASE IF NOT EXISTS phukiendienthoai DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE phukiendienthoai;
 --
@@ -352,8 +352,6 @@ ALTER TABLE `tbl_category`
 --
 -- Indexes for table `tbl_danhmuc_tin`
 --
-ALTER TABLE `tbl_danhmuc_tin`
-  ADD PRIMARY KEY (`danhmuctin_id`);
 
 --
 -- Indexes for table `tbl_donhang`
@@ -416,8 +414,7 @@ ALTER TABLE `tbl_category`
 --
 -- AUTO_INCREMENT for table `tbl_danhmuc_tin`
 --
-ALTER TABLE `tbl_danhmuc_tin`
-  MODIFY `danhmuctin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 
 --
 -- AUTO_INCREMENT for table `tbl_donhang`
