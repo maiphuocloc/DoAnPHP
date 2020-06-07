@@ -22,6 +22,15 @@
 	<meta charset="UTF-8">
 	<title>Danh mục</title>
 	<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+
+	<link href="../css/admin-dashboard.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../css/Chart.css" rel="stylesheet" type="text/css" media="all" />
+
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<script src="../js/Chart.js"></script>
 </head>
 <body>
 
@@ -43,7 +52,7 @@
 
 					<div class="panel-heading">
 						<h3 class="panel-title">
-							<span class="glyphicon glyphicon-dashboard"></span> Xin chào: <?php echo $_SESSION['dangnhap'] ?>
+
 						</h3>
 					</div>
 
@@ -66,7 +75,63 @@
 
 						<div>
 
+							<?php
+							if(isset($_GET['quanly'])=='capnhat'){
+								$id_capnhat = $_GET['id'];
+								$sql_capnhat = mysqli_query($con,"SELECT * FROM tbl_category WHERE category_id='$id_capnhat'");
+								$row_capnhat = mysqli_fetch_array($sql_capnhat);
+								?>
+								<div class="col-md-4">
+								<h4>Cập nhật danh mục</h4>
+								<label>Tên danh mục</label>
+								<form action="" method="POST">
+									<input type="text" class="form-control" name="danhmuc" value="<?php echo $row_capnhat['category_name'] ?>"><br>
+									<input type="hidden" class="form-control" name="id_danhmuc" value="<?php echo $row_capnhat['category_id'] ?>">
+
+									<input type="submit" name="capnhatdanhmuc" value="Cập nhật danh mục" class="btn btn-default">
+								</form>
+								</div>
+							<?php
+							}else{
+								?>
+								<div class="col-md-4">
+								<h4>Thêm danh mục</h4>
+								<label>Tên danh mục</label>
+								<form action="" method="POST">
+									<input type="text" class="form-control" name="danhmuc" placeholder="Tên danh mục"><br>
+									<input type="submit" name="themdanhmuc" value="Thêm danh mục" class="btn btn-default">
+								</form>
+								</div>
+								<?php
+							} 
 							
+								?>
+							<div class="col-md-8">
+								<h4>Liệt kê danh mục</h4>
+								<?php
+								$sql_select = mysqli_query($con,"SELECT * FROM tbl_category ORDER BY category_id DESC"); 
+								?>
+								<table class="table table-bordered ">
+									<tr>
+										<th>Thứ tự</th>
+										<th>Tên danh mục</th>
+										<th>Quản lý</th>
+									</tr>
+									<?php
+									$i = 0;
+									while($row_category = mysqli_fetch_array($sql_select)){ 
+										$i++;
+									?>
+									<tr>
+										<td><?php echo $i; ?></td>
+										<td><?php echo $row_category['category_name'] ?></td>
+										<td><a href="?xoa=<?php echo $row_category['category_id'] ?>">Xóa</a> || <a href="?quanly=capnhat&id=<?php echo $row_category['category_id'] ?>">Cập nhật</a></td>
+									</tr>
+									<?php
+									} 
+									?>
+								</table>
+							</div>  <!-- col8-->
 
 						</div>
 
