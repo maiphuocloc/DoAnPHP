@@ -32,7 +32,7 @@
 	<meta charset="UTF-8">
 	<title>Đăng nhập Admin</title>
 	<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../css/admin-index.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../css/admin-login.css" rel="stylesheet" type="text/css" media="all" />
 
 </head>
 <body>
