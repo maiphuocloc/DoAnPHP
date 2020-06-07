@@ -43,12 +43,12 @@
 <!-- top-header -->
 	<div class="agile-main-top">
 		<div class="container-fluid" style="position: fixed; z-index: 10000; padding:0px">
-				<div class="navbar" style="padding: 0px !important; background-color: #f7f9fb ">
-					<nav class="navbar navbar-expand-lg navbar-light bg-light" style="float: left;" style="width: 100% !important;">
+				<div class="navbar" style="padding: 0px !important; background-color: #f8f8f9 !important;">
+					<nav class="navbar navbar-expand-lg navbar-light bg-light" style="float: left;">
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul class="navbar-nav ml-auto text-center mr-xl-5" style="margin:0px !important">
 								<li class="nav-item active mr-lg-2 mb-lg-0 mb-2">
-									<a class="nav-link" href="index.php" style="font-size: 30px; padding: 0px 10px; font-family: initial; border: 1px solid;">PHỤ KIỆN ĐIỆN THOẠI
+									<a class="nav-link" href="index.php" style="font-size: 30px !important; padding: 0px 10px !important; border: 1px solid;">PHỤ KIỆN ĐIỆN THOẠI
 										<span class="sr-only">(current)</span>
 									</a>
 								</li>													
@@ -77,10 +77,10 @@
 					</nav>
 				</div>
 
-				<div class="navbar" style="padding: 0px !important;">
-					<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100% !important;"> 
+				<div class="navbar" style="padding: 0px !important">
+					<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100% !important">
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul class="navbar-nav ml-auto text-center mr-xl-5" style="margin:0px auto !important">
+							<ul class="navbar-nav ml-auto text-center mr-xl-5" style="margin:0 auto !important">
 									<?php 
 										$sql_category_danhmuc = mysqli_query($con,'SELECT * FROM tbl_category ORDER BY category_id DESC');
 										while($row_category_danhmuc = mysqli_fetch_array($sql_category_danhmuc)){
@@ -137,6 +137,7 @@
 							</ul>
 						</div>
 					</nav>
+				</div>
 			</div>
 		<div>
 	</div>
