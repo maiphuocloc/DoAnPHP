@@ -6,7 +6,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Web bán điện máy</title>
+	<title>Web bán phụ kiện điện tử</title>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
@@ -47,7 +47,7 @@
 <body>
 	<?php
 	include('include/topbar.php'); 
-	include('include/menu.php');
+	// include('include/menu.php');
 	include('include/slider.php');
 
 	if(isset($_GET['quanly'])){

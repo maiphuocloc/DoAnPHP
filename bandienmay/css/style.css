@@ -5,6 +5,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 
+
 html,
 body {
     margin: 0;
@@ -1974,7 +1975,7 @@ select.form-control.option-w3ls {
 }
 
 .form-control {
-    border-radius: 0;
+    border-radius: 1;
 }
 
 /*-- //Payment page --*/
