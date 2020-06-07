@@ -24,92 +24,59 @@
 	<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <div class="collapse navbar-collapse" id="navbarNav">
-	    <ul class="navbar-nav">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="xulydonhang.php">Đơn hàng <span class="sr-only">(current)</span></a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="xulydanhmuc.php">Danh mục</a>
-	      </li>
-	         <li class="nav-item">
-	        <a class="nav-link" href="xulydanhmucbaiviet.php">Danh mục Bài viết</a>
-	      </li>
-	         <li class="nav-item">
-	        <a class="nav-link" href="xulybaiviet.php">Bài viết</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="xulysanpham.php">Sản phẩm</a>
-	      </li>
-	       <li class="nav-item">
-	         <a class="nav-link" href="xulykhachhang.php">Khách hàng</a>
-	      </li>
-	      
-	    </ul>
-	  </div>
-	</nav><br><br>
+
+
+	
+
 	<div class="container">
 		<div class="row">
-			<?php
-			if(isset($_GET['quanly'])=='capnhat'){
-				$id_capnhat = $_GET['id'];
-				$sql_capnhat = mysqli_query($con,"SELECT * FROM tbl_category WHERE category_id='$id_capnhat'");
-				$row_capnhat = mysqli_fetch_array($sql_capnhat);
-				?>
-				<div class="col-md-4">
-				<h4>Cập nhật danh mục</h4>
-				<label>Tên danh mục</label>
-				<form action="" method="POST">
-					<input type="text" class="form-control" name="danhmuc" value="<?php echo $row_capnhat['category_name'] ?>"><br>
-					<input type="hidden" class="form-control" name="id_danhmuc" value="<?php echo $row_capnhat['category_id'] ?>">
-
-					<input type="submit" name="capnhatdanhmuc" value="Cập nhật danh mục" class="btn btn-default">
-				</form>
-				</div>
-			<?php
-			}else{
-				?>
-				<div class="col-md-4">
-				<h4>Thêm danh mục</h4>
-				<label>Tên danh mục</label>
-				<form action="" method="POST">
-					<input type="text" class="form-control" name="danhmuc" placeholder="Tên danh mục"><br>
-					<input type="submit" name="themdanhmuc" value="Thêm danh mục" class="btn btn-default">
-				</form>
-				</div>
-				<?php
-			} 
 			
-				?>
-			<div class="col-md-8">
-				<h4>Liệt kê danh mục</h4>
-				<?php
-				$sql_select = mysqli_query($con,"SELECT * FROM tbl_category ORDER BY category_id DESC"); 
-				?>
-				<table class="table table-bordered ">
-					<tr>
-						<th>Thứ tự</th>
-						<th>Tên danh mục</th>
-						<th>Quản lý</th>
-					</tr>
-					<?php
-					$i = 0;
-					while($row_category = mysqli_fetch_array($sql_select)){ 
-						$i++;
-					?>
-					<tr>
-						<td><?php echo $i; ?></td>
-						<td><?php echo $row_category['category_name'] ?></td>
-						<td><a href="?xoa=<?php echo $row_category['category_id'] ?>">Xóa</a> || <a href="?quanly=capnhat&id=<?php echo $row_category['category_id'] ?>">Cập nhật</a></td>
-					</tr>
-					<?php
-					} 
-					?>
-				</table>
-			</div>
-		</div>
-	</div>
+		</div> <!-- row-->
+	</div> <!-- container-->
 	
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-primary">
+
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<span class="glyphicon glyphicon-dashboard"></span> Xin chào: <?php echo $_SESSION['dangnhap'] ?>
+						</h3>
+					</div>
+
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-xs-6 col-md-6">
+							<a href="xulydonhang.php" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Đơn hàng</a>
+							<a href="xulydanhmuc.php" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Danh mục</a>
+							<a href="xulysanpham.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Sản phẩm</a>
+							<a href="" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Comments</a>
+							</div>
+							<div class="col-xs-6 col-md-6">
+							<a href="xulykhachhang.php" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Khách hàng</a>
+							<a href="xulydanhmucbaiviet.php" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/>Loại Post </a>
+							<a href="xulybaiviet.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-picture"></span> <br/>Post</a>
+							<a href="#" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-tag"></span> <br/>Tags</a>
+							</div>
+						</div>
+						
+
+						<div>
+
+							
+
+						</div>
+
+
+					</div> <!--panel-body-->
+
+				</div> <!--panel-primary-->
+			</div> <!--colmd12-->
+		</div> <!--row-->
+	</div> <!--container-->
+
 </body>
 </html>
