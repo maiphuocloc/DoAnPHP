@@ -36,114 +36,61 @@
 		
  		header('Location:index.php?quanly=giohang');
 	}
-?> 
-<?php 
-		$sql_category = mysqli_query($con,'SELECT * FROM tbl_category ORDER BY category_id DESC');
-	?>
+?>
+
 <!-- top-header -->
-	<div class="agile-main-top">
-		<div class="container-fluid" style="position: fixed; z-index: 10000; padding:0px">
-				<div class="navbar" style="padding: 0px !important; background-color: #f8f8f9 !important;">
-					<nav class="navbar navbar-expand-lg navbar-light bg-light" style="float: left;">
-						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul class="navbar-nav ml-auto text-center mr-xl-5" style="margin:0px !important">
-								<li class="nav-item active mr-lg-2 mb-lg-0 mb-2">
-									<a class="nav-link" href="index.php" style="font-size: 30px !important; padding: 0px 10px !important; border: 1px solid;">PHỤ KIỆN ĐIỆN THOẠI
-										<span class="sr-only">(current)</span>
-									</a>
-								</li>													
-							</ul>
-						</div>
-					</nav>
-					<nav class="navbar navbar-expand-lg navbar-light bg-light" style="float: right;">
-						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul class="navbar-nav ml-auto text-center mr-xl-5" style="margin:0px !important">
-									<?php
-										if(isset($_SESSION['dangnhap_home']))
-										{ 
-										
-										?>
-										<li class="text-center border-right nav-item">
-											<a href="index.php?quanly=xemdonhang&khachhang=<?php echo $_SESSION['khachhang_id'] ?>" class="nav-link">
-												<i class="fas fa-truck mr-2"></i>Xem đơn hàng : <?php echo $_SESSION['dangnhap_home'] ?></a>
-										</li>
-										<?php } ?>									
-										<li class="text-center border-right nav-item">
-											<a href="#" data-toggle="modal" data-target="#dangnhap" class="nav-link">
-												<i class="fas fa-sign-in-alt mr-2"></i> Đăng nhập </a>
-										</li>							
-							</ul>
-						</div>
-					</nav>
+<div class="agile-main-top">
+	<div class="container-fluid" style="position: fixed; z-index: 10000; padding:0px">
+		<div class="navbar" style="padding: 0px !important; background-color: #f8f8f9 !important;">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light" style="float: left;">
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto text-center mr-xl-5" style="margin:0px !important">
+						<li class="nav-item active mr-lg-2 mb-lg-0 mb-2">
+							<a class="nav-link" href="index.php"
+								style="font-size: 30px !important; padding: 0px 10px !important; border: 1px solid;">PHỤ
+								KIỆN ĐIỆN THOẠI
+								<span class="sr-only">(current)</span>
+							</a>
+						</li>
+					</ul>
 				</div>
+			</nav>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light" style="float: right;">
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto text-center mr-xl-5" style="margin:0px !important">
+						<?php if(isset($_SESSION['dangnhap_home'])) { ?>
+						<li class="text-center border-right nav-item">
+							<a href="index.php?quanly=xemdonhang&khachhang=<?php echo $_SESSION['khachhang_id'] ?>"
+								class="nav-link">
+								<i class="fas fa-truck mr-2"></i>Xem đơn hàng : <?php echo $_SESSION['dangnhap_home'] ?></a>
+						</li>
+						<?php } ?>
+						<?php if(isset($_SESSION['dangnhap_home'])) { ?>
+						<li class="text-center border-right nav-item">
+							<a href="#" data-target="#dangxuat" class="nav-link">
+								<i class="fas fa-sign-in-alt mr-2"></i> Đăng xuất </a>
+						</li>
+						<?php } else { ?>
+						<li class="text-center border-right nav-item">
+							<a href="#" data-toggle="modal" data-target="#dangnhap" class="nav-link">
+								<i class="fas fa-sign-in-alt mr-2"></i> Đăng nhập </a>
+						</li>
+						<?php } ?>
 
-				<div class="navbar" style="padding: 0px !important">
-					<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100% !important">
-						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul class="navbar-nav ml-auto text-center mr-xl-5" style="margin:0 auto !important">
-									<?php 
-										$sql_category_danhmuc = mysqli_query($con,'SELECT * FROM tbl_category ORDER BY category_id DESC');
-										while($row_category_danhmuc = mysqli_fetch_array($sql_category_danhmuc)){
-									?>
-									<li class="nav-item  mr-lg-2 mb-lg-0 mb-2">
 
-										<a class="nav-link " href="?quanly=danhmuc&id=<?php echo $row_category_danhmuc['category_id'] ?>" role="button"  aria-haspopup="true" aria-expanded="false">
-											<?php echo $row_category_danhmuc['category_name'] ?>
-										</a>
-										
-									</li>
-									<?php
-									} 
-									?>
-									<li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
-										<?php
-										$sql_danhmuctin = mysqli_query($con,"SELECT * FROM tbl_danhmuc_tin ORDER BY danhmuctin_id DESC"); 
-
-										?>
-										<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											Tin tức
-										</a>
-										<div class="dropdown-menu">
-											<?php
-											while($row_danhmuctin = mysqli_fetch_array($sql_danhmuctin)){ 
-											?>
-											<a class="dropdown-item" href="?quanly=tintuc&id_tin=<?php echo $row_danhmuctin['danhmuctin_id'] ?>"><?php echo $row_danhmuctin['tendanhmuc'] ?></a>
-											<?php
-											} 
-											?>
-										</div>
-									</li>
-									<li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
-										<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											Trang
-										</a>
-										<div class="dropdown-menu">
-											<a class="dropdown-item" href="product.html">Sản phẩm mới</a>
-
-											<div class="dropdown-divider"></div>
-											<a class="dropdown-item" href="checkout.html">Kiểm tra hàng</a>
-											<a class="dropdown-item" href="payment.html">Thanh toán</a>
-										</div>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="contact.html">Liên hệ</a>
-									</li>
-									<li>
-										<form class="form-inline" action="index.php?quanly=timkiem" method="POST">
-											<input class="form-control mr-sm-2" name="search_product" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Search" required>
-											<button class="btn btn-success my-2 my-sm-0" name="search_button" type="submit">Tìm kiếm</button>
-										</form>	
-									</li>
-							</ul>
-						</div>
-					</nav>
+					</ul>
 				</div>
-			</div>
-		<div>
+			</nav>
+		</div>
+		<?php
+				include('include/menu.php');
+				?>
+	</div>
+	<div>
 	</div>
 	<!-- modals -->
 	<!-- log in -->
-	<div class="modal fade" id="dangnhap" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal fade" style="margin-top: 130px" id="dangnhap" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -160,12 +107,13 @@
 						</div>
 						<div class="form-group">
 							<label class="col-form-label">Mật khẩu</label>
-							<input type="password" class="form-control" placeholder=" " name="password_login" required="">
+							<input type="password" class="form-control" placeholder=" " name="password_login"
+								required="">
 						</div>
 						<div class="right-w3l">
 							<input type="submit" class="form-control" name="dangnhap_home" value="Đăng nhập">
 						</div>
-						
+
 						<p class="text-center dont-do mt-3">Chưa có tài khoản?
 							<a href="#" data-toggle="modal" data-target="#dangky">
 								Đăng ký</a>
@@ -177,9 +125,9 @@
 	</div>
 
 	<!-- register -->
-	<div class="modal fade" id="dangky" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
+	<div class="modal fade" id="dangky" style="margin-top: 120px; margin-left: -50px" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document" > 
+			<div class="modal-content" style="width: 600px">
 				<div class="modal-header">
 					<h5 class="modal-title">Đăng ký</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -188,43 +136,43 @@
 				</div>
 				<div class="modal-body">
 					<form action="" method="post">
-						<div class="form-group">
-							<label class="col-form-label">Tên khách hàng</label>
-							<input type="text" class="form-control" placeholder=" " name="name" required="">
+						<div class="row">
+							<div class="col-6">
+								<div class="form-group">
+									<label class="col-form-label">Tên khách hàng</label>
+									<input type="text" class="form-control" placeholder=" " name="name" required="">
+								</div>
+								<div class="form-group">
+									<label class="col-form-label">Email</label>
+									<input type="email" class="form-control" placeholder=" " name="email" required="">
+								</div>
+								<div class="form-group">
+									<label class="col-form-label">Phone</label>
+									<input type="text" class="form-control" placeholder=" " name="phone" required="">
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-group">
+									<label class="col-form-label">Address</label>
+									<input type="text" class="form-control" placeholder=" " name="address" required="">
+								</div>
+								<div class="form-group">
+									<label class="col-form-label">Password</label>
+									<input type="password" class="form-control" placeholder=" " name="password" required="">
+									<input type="hidden" class="form-control" placeholder="" name="giaohang" value="0">
+								</div>
+								<div class="form-group">
+									<label class="col-form-label">Ghi chú</label>
+									<textarea class="form-control" name="note"></textarea>
+								</div>
+							</div>
 						</div>
-						<div class="form-group">
-							<label class="col-form-label">Email</label>
-							<input type="email" class="form-control" placeholder=" " name="email" required="">
-						</div>
-						<div class="form-group">
-							<label class="col-form-label">Phone</label>
-							<input type="text" class="form-control" placeholder=" " name="phone"  required="">
-						</div>
-						<div class="form-group">
-							<label class="col-form-label">Address</label>
-							<input type="text" class="form-control" placeholder=" " name="address"  required="">
-						</div>
-						<div class="form-group">
-							<label class="col-form-label">Password</label>
-							<input type="password" class="form-control" placeholder=" " name="password"  required="">
-							<input type="hidden" class="form-control" placeholder="" name="giaohang"  value="0">
-						</div>
-						<div class="form-group">
-							<label class="col-form-label">Ghi chú</label>
-							<textarea class="form-control" name="note"></textarea>
-						</div>
-						
 						<div class="right-w3l">
 							<input type="submit" class="form-control" name="dangky" value="Đăng ký">
-						</div>
-					
+						</div>						
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- //modal -->
-	<!-- //top-header -->
-	<!-- shop locator (popup) -->
-	<!-- //header-bottom -->
-	<!-- navigation -->
+	

@@ -47,7 +47,11 @@
 <body>
 	<?php
 	include('include/topbar.php'); 
-	// include('include/menu.php');
+	
+	?>
+	<div style="height: 120px">
+	</div>
+	<?php
 	include('include/slider.php');
 
 	if(isset($_GET['quanly'])){
@@ -55,7 +59,6 @@
 	}else{
 		$tam = '';
 	}
-
 	if($tam=='danhmuc'){
 		include('include/danhmuc.php');
 	}elseif($tam=='chitietsp'){
