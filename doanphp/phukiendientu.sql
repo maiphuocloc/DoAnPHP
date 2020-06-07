@@ -19,7 +19,9 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bandienmay`
+-- Database: `phukiendientu`
+CREATE DATABASE IF NOT EXISTS phukiendientu DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE phukiendientu;
 --
 
 -- --------------------------------------------------------
