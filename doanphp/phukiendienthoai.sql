@@ -20,8 +20,8 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `phukiendientu`
-CREATE DATABASE IF NOT EXISTS phukiendientu DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE phukiendientu;
+CREATE DATABASE IF NOT EXISTS phukiendienthoai DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE phukiendienthoai;
 --
 
 -- --------------------------------------------------------
@@ -98,24 +98,6 @@ INSERT INTO `tbl_category` (`category_id`, `category_name`) VALUES
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `tbl_danhmuc_tin`
---
-
-CREATE TABLE `tbl_danhmuc_tin` (
-  `danhmuctin_id` int(11) NOT NULL,
-  `tendanhmuc` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `tbl_danhmuc_tin`
---
-
-INSERT INTO `tbl_danhmuc_tin` (`danhmuctin_id`, `tendanhmuc`) VALUES
-(1, 'Kiến thức máy lạnh'),
-(2, 'Kiến thức máy giặc'),
-(3, 'Kiến thức laptop'),
-(4, 'Kiến thức Tivi');
 
 -- --------------------------------------------------------
 
