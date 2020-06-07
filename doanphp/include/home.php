@@ -74,28 +74,6 @@
 				<!-- product right -->
 				<div class="col-lg-3 mt-lg-0 mt-4 p-lg-0">
 					<div class="side-bar p-sm-4 p-3">
-						<div class="search-hotel border-bottom py-2">
-							<h3 class="agileits-sear-head mb-3">Tìm kiếm</h3>
-							<form action="#" method="post">
-								<input type="search" placeholder="Sản phẩm..." name="search" required="">
-								<input type="submit" value=" ">
-							</form>
-						</div>
-						<!-- price -->
-						<div class="range border-bottom py-2">
-							<h3 class="agileits-sear-head mb-3">Giá</h3>
-							<div class="w3l-range">
-								<ul>
-									<li>
-										<a href="#">Dưới 1 triệu</a>
-									</li>
-									
-								</ul>
-							</div>
-						</div>
-						<!-- //price -->
-						
-						<!-- reviews -->
 						<div class="customer-rev border-bottom left-side py-2">
 							<h3 class="agileits-sear-head mb-3">Khách hàng Review</h3>
 							<ul>
@@ -124,7 +102,7 @@
 								?>
 								<li>
 									<!-- <input type="checkbox" class="checked"> -->
-									<span class="span"><a href="danhmucsanpham.php?id=<?php echo $row_category_sidebar['category_id'] ?>"><?php echo $row_category_sidebar['category_name'] ?></a></span>
+									<span class="span"><a href="index.php?quanly=danhmuc&id=<?php echo $row_category_sidebar['category_id'] ?>"><?php echo $row_category_sidebar['category_name'] ?></a></span>
 								</li>
 								<?php
 								} 
