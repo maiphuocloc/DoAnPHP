@@ -15,20 +15,7 @@
 						<?php echo $row_category_danhmuc['category_name'] ?>
 					</a>
 				</li>
-				<?php } ?>
-				<li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
-					<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-						aria-haspopup="true" aria-expanded="false">
-						Trang
-					</a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="product.html">Sản phẩm mới</a>
-
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="checkout.html">Kiểm tra hàng</a>
-						<a class="dropdown-item" href="payment.html">Thanh toán</a>
-					</div>
-				</li>
+				<?php } ?>				
 				<li class="nav-item">
 					<a class="nav-link" href="contact.html">Liên hệ</a>
 				</li>

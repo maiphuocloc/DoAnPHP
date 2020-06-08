@@ -63,9 +63,7 @@
 							<a href="index.php?quanly=xemdonhang&khachhang=<?php echo $_SESSION['khachhang_id'] ?>"
 								class="nav-link">
 								<i class="fas fa-truck mr-2"></i>Xem đơn hàng : <?php echo $_SESSION['dangnhap_home'] ?></a>
-						</li>
-						<?php } ?>
-						<?php if(isset($_SESSION['dangnhap_home'])) { ?>
+						</li>					
 						<li class="text-center border-right nav-item">
 							<a href="#" data-target="#dangxuat" class="nav-link">
 								<i class="fas fa-sign-in-alt mr-2"></i> Đăng xuất </a>
