@@ -148,15 +148,15 @@
 							<a href="xulydonhang.php" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Đơn hàng</a>
 							<a href="xulydanhmuc.php" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Danh mục</a>
 							<a href="xulysanpham.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Sản phẩm</a>
-							<a href="xulykhachhang.php" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Comments</a>
+							<a href="xulykhachhang.php" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Thông báo</a>
 							</div>
 						</div>	 						 										
 						<div >
-							<h4>Liệt kê sản phẩm</h4>
+							<h4 style="float:left">Liệt kê sản phẩm</h4>
 							<?php
 							$sql_select_sp = mysqli_query($con,"SELECT * FROM tbl_sanpham,tbl_category WHERE tbl_sanpham.category_id=tbl_category.category_id ORDER BY tbl_sanpham.sanpham_id DESC"); 
 							?> 
-							<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal1">Thêm</button>
+							<button type="button" class="btn btn-info btn-sm" style="float:right" data-toggle="modal" data-target="#myModal1">Thêm</button>
 							<table class="table table-bordered ">
 								<tr>
 									<th>Thứ tự</th>

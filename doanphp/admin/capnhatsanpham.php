@@ -45,7 +45,7 @@ if(isset($_POST['capnhatsanpham'])) {
 
 </head>
 <body>
-    <div>
+    <div >
 		<?php	if(isset($_GET['quanly'])=='capnhat'){	
 				$id_capnhat = $_GET['capnhat_id'];
 				$sql_capnhat = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_id='$id_capnhat'");

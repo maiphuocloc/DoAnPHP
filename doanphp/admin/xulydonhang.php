@@ -54,8 +54,7 @@ if(isset($_POST['capnhatdonhang'])){
 
 
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
+
 				<div class="panel panel-primary">
 
 					<div class="panel-heading">
@@ -70,7 +69,7 @@ if(isset($_POST['capnhatdonhang'])){
 						<a href="xulydonhang.php" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Đơn hàng</a>
 						<a href="xulydanhmuc.php" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Danh mục</a>
 						<a href="xulysanpham.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Sản phẩm</a>
-						<a href="xulykhachhang.php" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Comments</a>
+						<a href="xulykhachhang.php" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Thông báo</a>
 						</div>
 						</div>
 
@@ -196,8 +195,7 @@ if(isset($_POST['capnhatdonhang'])){
 					</div> <!--panel-body-->
 
 				</div> <!--panel-primary-->
-			</div> <!--colmd12-->
-		</div> <!--row-->
+
 	</div> <!--container-->
 	
 </body>

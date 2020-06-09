@@ -31,7 +31,7 @@
 
 	<script src="../js/Chart.js"></script>
 </head>
-<body>
+<body style="padding-top: 20px;">
 
 	 <!-- Modal -->
 	 <div class="modal fade" id="myModal1" role="dialog">
@@ -57,19 +57,8 @@
   </div>
 
 
-	
-
 	<div class="container">
-		<div class="row">
-			
-		</div> <!-- row-->
-	</div> <!-- container-->
-	
 
-
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
 				<div class="panel panel-primary">
 
 					<div class="panel-heading">
@@ -85,7 +74,7 @@
 							<a href="xulydonhang.php" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Đơn hàng</a>
 							<a href="xulydanhmuc.php" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Danh mục</a>
 							<a href="xulysanpham.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Sản phẩm</a>
-							<a href="xulykhachhang.php" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Comments</a>
+							<a href="xulykhachhang.php" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Thông báo</a>
 							</div>
 						</div>
 						
@@ -161,8 +150,6 @@
 					</div> <!--panel-body-->
 
 				</div> <!--panel-primary-->
-			</div> <!--colmd12-->
-		</div> <!--row-->
 	</div> <!--container-->
 
 </body>
