@@ -54,11 +54,13 @@
 	<link href="../css/admin-dashboard.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="../css/Chart.css" rel="stylesheet" type="text/css" media="all" />
 
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	
 
 	<script src="../js/Chart.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 
 
 </head>
@@ -88,36 +90,22 @@
 	    </ul>
 	  </div>
 	</nav><br><br> -->
-
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3 class="panel-title">
-						</h3>
-					</div>
-
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-xs-12 col-md-12" style="text-align: center">
-							<a href="xulydonhang.php" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Đơn hàng</a>
-							<a href="xulydanhmuc.php" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Danh mục</a>
-							<a href="xulysanpham.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Sản phẩm</a>
-							<a href="xulykhachhang.php" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Comments</a>
-							</div>
-						</div>	 					
-	 					
-						 
-						<div class="row">
-		<?php
+	<div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content" style="width: 400px; height: 850px;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Thêm danh mục</h4>
+        </div>
+        <div class="modal-body">
+			<?php
 			if(isset($_GET['quanly'])=='capnhat'){
 				$id_capnhat = $_GET['capnhat_id'];
 				$sql_capnhat = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_id='$id_capnhat'");
 				$row_capnhat = mysqli_fetch_array($sql_capnhat);
 				$id_category_1 = $row_capnhat['category_id'];
 				?>
-				<div class="col-md-4">
+				<div >
 				<h4>Cập nhật sản phẩm</h4>
 				
 				<form action="" method="POST" enctype="multipart/form-data">
@@ -163,7 +151,7 @@
 			<?php
 			}else{
 				?> 
-				<div class="col-md-4">
+				<div>
 				<h4>Thêm sản phẩm</h4>
 				
 				<form action="" method="POST" enctype="multipart/form-data">
@@ -202,11 +190,42 @@
 			} 
 			
 				?>
+			
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+						</h3>
+					</div>
+
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-xs-12 col-md-12" style="text-align:center">
+							<a href="xulydonhang.php" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Đơn hàng</a>
+							<a href="xulydanhmuc.php" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Danh mục</a>
+							<a href="xulysanpham.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Sản phẩm</a>
+							<a href="xulykhachhang.php" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Comments</a>
+							</div>
+						</div>	 					
+	 					
+						 
+						<div class="row">
+		
 			<div class="col-md-8">
 				<h4>Liệt kê sản phẩm</h4>
 				<?php
 				$sql_select_sp = mysqli_query($con,"SELECT * FROM tbl_sanpham,tbl_category WHERE tbl_sanpham.category_id=tbl_category.category_id ORDER BY tbl_sanpham.sanpham_id DESC"); 
 				?> 
+				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal1">Thêm</button>
 				<table class="table table-bordered ">
 					<tr>
 						<th>Thứ tự</th>
