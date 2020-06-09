@@ -16,9 +16,6 @@
 					</a>
 				</li>
 				<?php } ?>				
-				<li class="nav-item">
-					<a class="nav-link" href="contact.html">Liên hệ</a>
-				</li>
 				<li>
 					<div class="col-2 top_nav_right text-center mt-sm-0 mt-2">
 						<div class="wthreecartaits wthreecartaits2 cart cart box_1">
