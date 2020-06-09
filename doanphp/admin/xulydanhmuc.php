@@ -21,18 +21,40 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Danh mục</title>
-	<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	
 
-	<link href="../css/admin-dashboard.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../css/Chart.css" rel="stylesheet" type="text/css" media="all" />
+	
 
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 	<script src="../js/Chart.js"></script>
 </head>
 <body>
+
+	 <!-- Modal -->
+	 <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content" style="margin-top:200px">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Thêm danh mục</h4>
+        </div>
+        <div class="modal-body">
+			<form action="" method="POST">
+				<input type="text" class="form-control" name="danhmuc" placeholder="Tên danh mục"><br>
+				
+				<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<input type="submit" class="btn btn-primary" name="themdanhmuc" value="Thêm" class="btn btn-default">
+        		</div>
+			</form>
+			
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 	
@@ -73,6 +95,9 @@
 						</div>
 						
 
+						
+
+
 						<div>
 
 							<?php
@@ -94,20 +119,25 @@
 							<?php
 							}else{
 								?>
-								<div class="col-md-4">
-								<h4>Thêm danh mục</h4>
-								<label>Tên danh mục</label>
-								<form action="" method="POST">
-									<input type="text" class="form-control" name="danhmuc" placeholder="Tên danh mục"><br>
-									<input type="submit" name="themdanhmuc" value="Thêm danh mục" class="btn btn-default">
-								</form>
+								<div class="row">
+								
 								</div>
 								<?php
 							} 
 							
 								?>
-							<div class="col-md-8">
-								<h4>Liệt kê danh mục</h4>
+								</br>
+							<div class="row">
+								<div>
+									<div class="col-md-6">
+										<h4>Liệt kê danh mục</h4>
+									</div>
+									<div class="col-md-6" style="text-align-last: end">
+										<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal1">Open Modal</button>
+									</div>
+									
+								</div>
+								
 								<?php
 								$sql_select = mysqli_query($con,"SELECT * FROM tbl_category ORDER BY category_id DESC"); 
 								?>
