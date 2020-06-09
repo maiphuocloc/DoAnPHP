@@ -2,7 +2,7 @@
 	<!-- footer -->
 <footer>
 		<div class="row" style="background-color: #f7f9fc; height: 260px;">
-			<div class="col-4" style="margin: auto; padding: 0px 120px">
+			<div class="col-4" style="margin: auto; padding: 0px 80px">
 				<p style=" color: #F45C5D;font-size: 30px; text-align: center; border: 1px solid #F45C5D">PHỤ KIỆN ĐIỆN THOẠI<p>
 			</div>
 			<div class="col-8" style="margin: auto; ">         
