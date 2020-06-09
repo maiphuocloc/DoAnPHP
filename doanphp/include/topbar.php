@@ -35,6 +35,14 @@
 		$_SESSION['khachhang_id'] = $row_khachhang['khachhang_id'];
 		
  		header('Location:index.php?quanly=giohang');
+	}elseif(isset($_GET['dangxuat'])){
+		$id = $_GET['dangxuat'];
+		if($id==1){
+			unset($_SESSION['dangnhap_home']);
+			header('Location:index.php');
+		}
+		
+	
 	}
 ?>
 
@@ -65,7 +73,7 @@
 								<i class="fas fa-truck mr-2"></i>Xem đơn hàng : <?php echo $_SESSION['dangnhap_home'] ?></a>
 						</li>					
 						<li class="text-center border-right nav-item">
-							<a href="#" data-target="#dangxuat" class="nav-link">
+							<a href="index.php?quanly=giohang&dangxuat=1"class="nav-link">
 								<i class="fas fa-sign-in-alt mr-2"></i> Đăng xuất </a>
 						</li>
 						<?php } else { ?>
