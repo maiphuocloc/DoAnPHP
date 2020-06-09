@@ -46,7 +46,7 @@
 				<input type="text" class="form-control" name="danhmuc" placeholder="Tên danh mục"><br>
 				
 				<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
 				<input type="submit" class="btn btn-primary" name="themdanhmuc" value="Thêm" class="btn btn-default">
         		</div>
 			</form>

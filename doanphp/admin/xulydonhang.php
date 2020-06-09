@@ -65,19 +65,13 @@ if(isset($_POST['capnhatdonhang'])){
 					</div>
 
 					<div class="panel-body">
-						<div class="row">
-							<div class="col-xs-6 col-md-6">
-							<a href="xulydonhang.php" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Đơn hàng</a>
-							<a href="xulydanhmuc.php" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Danh mục</a>
-							<a href="xulysanpham.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Sản phẩm</a>
-							<a href="" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Comments</a>
-							</div>
-							<div class="col-xs-6 col-md-6">
-							<a href="xulykhachhang.php" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Khách hàng</a>
-							<a href="xulydanhmucbaiviet.php" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/>Loại Post </a>
-							<a href="xulybaiviet.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-picture"></span> <br/>Post</a>
-							<a href="#" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-tag"></span> <br/>Tags</a>
-							</div>
+						<div class="row">												
+						<div class="col-xs-12 col-md-12" style="text-align: center">
+						<a href="xulydonhang.php" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Đơn hàng</a>
+						<a href="xulydanhmuc.php" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Danh mục</a>
+						<a href="xulysanpham.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Sản phẩm</a>
+						<a href="xulykhachhang.php" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Comments</a>
+						</div>
 						</div>
 
 						
@@ -87,8 +81,8 @@ if(isset($_POST['capnhatdonhang'])){
 								$mahang = $_GET['mahang'];
 								$sql_chitiet = mysqli_query($con,"SELECT * FROM tbl_donhang,tbl_sanpham WHERE tbl_donhang.sanpham_id=tbl_sanpham.sanpham_id AND tbl_donhang.mahang='$mahang'");
 								?>
-								<div class="col-md-7">
-								<p>Xem chi tiết đơn hàng</p>
+								<div class="col-md-6">
+								<h4>Xem chi tiết đơn hàng</h4>
 							<form action="" method="POST">
 								<table class="table table-bordered ">
 									<tr>
@@ -127,26 +121,26 @@ if(isset($_POST['capnhatdonhang'])){
 									?> 
 								</table>
 
-								<select class="form-control" name="xuly">
+								<select class="form-control" style="height:30px" name="xuly">
 									<option value="1">Đã xử lý | Giao hàng</option>
 									<option value="0">Chưa xử lý</option>
 								</select><br>
 
-								<input type="submit" value="Cập nhật đơn hàng" name="capnhatdonhang" class="btn btn-success">
+								<input type="submit" style="width:170px" value="Cập nhật đơn hàng" name="capnhatdonhang" class="btn btn-success">
 							</form>
 								</div>  
 							<?php
 							}else{
 								?> 
 								
-								<div class="col-md-7">
+								<div class="col-md-6">
 									<p>Đơn hàng</p>
 								</div>  
 								<?php
 							} 
 							
 								?> 
-							<div class="col-md-5">
+							<div class="col-md-6">
 								<h4>Liệt kê đơn hàng</h4>
 								<?php
 								$sql_select = mysqli_query($con,"SELECT * FROM tbl_sanpham,tbl_khachhang,tbl_donhang WHERE tbl_donhang.sanpham_id=tbl_sanpham.sanpham_id AND tbl_donhang.khachhang_id=tbl_khachhang.khachhang_id GROUP BY mahang "); 

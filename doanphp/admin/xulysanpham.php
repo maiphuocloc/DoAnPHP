@@ -43,6 +43,7 @@
 	if(isset($_GET['xoa'])){
 		$id= $_GET['xoa'];
 		$sql_xoa = mysqli_query($con,"DELETE FROM tbl_sanpham WHERE sanpham_id='$id'");
+		header('Location:xulysanpham.php');
 	} 
 ?>
 <!DOCTYPE html>
@@ -64,143 +65,77 @@
 
 
 </head>
-<body>
-	<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <div class="collapse navbar-collapse" id="navbarNav">
-	    <ul class="navbar-nav">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="xulydonhang.php">Đơn hàng <span class="sr-only">(current)</span></a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="xulydanhmuc.php">Danh mục</a>
-	      </li>
-	       <li class="nav-item">
-	        <a class="nav-link" href="xulydanhmucbaiviet.php">Danh mục Bài viết</a>
-	      </li>
-	         <li class="nav-item">
-	        <a class="nav-link" href="xulybaiviet.php">Bài viết</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="xulysanpham.php">Sản phẩm</a>
-	      </li>
-	       <li class="nav-item">
-	        <a class="nav-link" href="xulykhachhang.php">Khách hàng</a>
-	      </li>
-	      
-	    </ul>
-	  </div>
-	</nav><br><br> -->
+<body>	
 	<div class="modal fade" id="myModal1" role="dialog">
-    <div class="modal-dialog modal-sm modal-dialog-centered">
-      <div class="modal-content" style="width: 400px; height: 850px;">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Thêm danh mục</h4>
-        </div>
-        <div class="modal-body">
-			<?php
-			if(isset($_GET['quanly'])=='capnhat'){
-				$id_capnhat = $_GET['capnhat_id'];
-				$sql_capnhat = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_id='$id_capnhat'");
-				$row_capnhat = mysqli_fetch_array($sql_capnhat);
-				$id_category_1 = $row_capnhat['category_id'];
-				?>
-				<div >
-				<h4>Cập nhật sản phẩm</h4>
+		<div class="modal-dialog modal-sm modal-dialog-centered">
+		<div class="modal-content" style="width: 600px; height: 630px; margin-left:-130px">
+			<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Thêm sản phẩm</h4>
+			</div>
+			<div class="modal-body">	
+					<div>	
+					<form action="" method="POST" enctype="multipart/form-data">
+						<label>Tên sản phẩm</label>
+						<input type="text" class="form-control" name="tensanpham" placeholder="Tên sản phẩm"><br>
+						<label>Hình ảnh</label>
+						<input type="file" class="form-control" name="hinhanh"><br>	
+						<div class=row>
+							<div class="col-md-6">
+								<label>Giá</label>
+								<input type="text" class="form-control" name="giasanpham" placeholder="Giá sản phẩm"><br>
+								<label>Số lượng</label>
+								<input type="text" class="form-control" name="soluong" placeholder="Số lượng"><br>                 
+							</div>
+							<div class="col-md-6">
+							<label>Giá khuyến mãi</label>
+								<input type="text" class="form-control" name="giakhuyenmai" placeholder="Giá khuyến mãi"><br>>                           
+								<label>Danh mục</label>
+								<?php
+								$sql_danhmuc = mysqli_query($con,"SELECT * FROM tbl_category ORDER BY category_id DESC"); 
+								?>
+								<select name="danhmuc" class="form-control">
+									<option value="0">-----Chọn danh mục-----</option>
+									<?php
+									while($row_danhmuc = mysqli_fetch_array($sql_danhmuc)){
+									?>
+									<option value="<?php echo $row_danhmuc['category_id'] ?>"><?php echo $row_danhmuc['category_name'] ?></option>
+									<?php 
+									}
+									?>
+								</select><br>
+							</div>
+						</div>
+						<label>Mô tả</label>
+						<textarea class="form-control" name="mota"></textarea><br>
+						<label>Chi tiết</label>
+						<textarea class="form-control" name="chitiet"></textarea><br>
+						
+						<input type="submit" name="themsanpham" style="margin-left: 210px;" value="Thêm sản phẩm" class="btn btn-success">
+					</form>
+					</div>
+		
 				
-				<form action="" method="POST" enctype="multipart/form-data">
-					<label>Tên sản phẩm</label>
-					<input type="text" class="form-control" name="tensanpham" value="<?php echo $row_capnhat['sanpham_name'] ?>"><br>
-					<input type="hidden" class="form-control" name="id_update" value="<?php echo $row_capnhat['sanpham_id'] ?>">
-					<label>Hình ảnh</label>
-					<input type="file" class="form-control" name="hinhanh"><br>
-					<img src="../uploads/<?php echo $row_capnhat['sanpham_image'] ?>" height="80" width="80"><br>
-					<label>Giá</label>
-					<input type="text" class="form-control" name="giasanpham" value="<?php echo $row_capnhat['sanpham_gia'] ?>"><br>
-					<label>Giá khuyến mãi</label>
-					<input type="text" class="form-control" name="giakhuyenmai" value="<?php echo $row_capnhat['sanpham_giakhuyenmai'] ?>"><br>
-					<label>Số lượng</label>
-					<input type="text" class="form-control" name="soluong" value="<?php echo $row_capnhat['sanpham_soluong'] ?>"><br>
-					<label>Mô tả</label>
-					<textarea class="form-control" rows="10" name="mota"><?php echo $row_capnhat['sanpham_mota'] ?></textarea><br>
-					<label>Chi tiết</label>
-					<textarea class="form-control" rows="10" name="chitiet"><?php echo $row_capnhat['sanpham_chitiet'] ?></textarea><br>
-					<label>Danh mục</label>
-					<?php
-					$sql_danhmuc = mysqli_query($con,"SELECT * FROM tbl_category ORDER BY category_id DESC"); 
-					?>
-					<select name="danhmuc" class="form-control">
-						<option value="0">-----Chọn danh mục-----</option>
-						<?php
-						while($row_danhmuc = mysqli_fetch_array($sql_danhmuc)){
-							if($id_category_1==$row_danhmuc['category_id']){
-						?>
-						<option selected value="<?php echo $row_danhmuc['category_id'] ?>"><?php echo $row_danhmuc['category_name'] ?></option>
-						<?php 
-							}else{
-						?>
-						<option value="<?php echo $row_danhmuc['category_id'] ?>"><?php echo $row_danhmuc['category_name'] ?></option>
-						<?php
-							}
-						}
-						?>
-					</select><br>
-					<input type="submit" name="capnhatsanpham" value="Cập nhật sản phẩm" class="btn btn-default">
-				</form>
-				</div>
-			<?php
-			}else{
-				?> 
-				<div>
-				<h4>Thêm sản phẩm</h4>
-				
-				<form action="" method="POST" enctype="multipart/form-data">
-					<label>Tên sản phẩm</label>
-					<input type="text" class="form-control" name="tensanpham" placeholder="Tên sản phẩm"><br>
-					<label>Hình ảnh</label>
-					<input type="file" class="form-control" name="hinhanh"><br>
-					<label>Giá</label>
-					<input type="text" class="form-control" name="giasanpham" placeholder="Giá sản phẩm"><br>
-					<label>Giá khuyến mãi</label>
-					<input type="text" class="form-control" name="giakhuyenmai" placeholder="Giá khuyến mãi"><br>
-					<label>Số lượng</label>
-					<input type="text" class="form-control" name="soluong" placeholder="Số lượng"><br>
-					<label>Mô tả</label>
-					<textarea class="form-control" name="mota"></textarea><br>
-					<label>Chi tiết</label>
-					<textarea class="form-control" name="chitiet"></textarea><br>
-					<label>Danh mục</label>
-					<?php
-					$sql_danhmuc = mysqli_query($con,"SELECT * FROM tbl_category ORDER BY category_id DESC"); 
-					?>
-					<select name="danhmuc" class="form-control">
-						<option value="0">-----Chọn danh mục-----</option>
-						<?php
-						while($row_danhmuc = mysqli_fetch_array($sql_danhmuc)){
-						?>
-						<option value="<?php echo $row_danhmuc['category_id'] ?>"><?php echo $row_danhmuc['category_name'] ?></option>
-						<?php 
-						}
-						?>
-					</select><br>
-					<input type="submit" name="themsanpham" value="Thêm sản phẩm" class="btn btn-default">
-				</form>
-				</div>
-				<?php
-			} 
-			
-				?>
-			
-        </div>
-      </div>
-    </div>
-  </div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div class="modal fade" id="myModal2" role="dialog">
+		<div class="modal-dialog modal-sm modal-dialog-centered">
+		<div class="modal-content" style="width: 600px; height: 1050px; padding: 10px 30px ; margin-left:-130px">
+			<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Cập nhật sản phẩm</h4>
+			</div>
+			<div class="modal-body">	
+			</div>
+		</div>
+		</div>
+	</div>
 
 
 
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h3 class="panel-title">
@@ -209,84 +144,74 @@
 
 					<div class="panel-body">
 						<div class="row">
-							<div class="col-xs-12 col-md-12" style="text-align:center">
+							<div style="text-align:center">
 							<a href="xulydonhang.php" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Đơn hàng</a>
 							<a href="xulydanhmuc.php" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Danh mục</a>
 							<a href="xulysanpham.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Sản phẩm</a>
 							<a href="xulykhachhang.php" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Comments</a>
 							</div>
-						</div>	 					
-	 					
-						 
-						<div class="row">
-		
-			<div class="col-md-8">
-				<h4>Liệt kê sản phẩm</h4>
-				<?php
-				$sql_select_sp = mysqli_query($con,"SELECT * FROM tbl_sanpham,tbl_category WHERE tbl_sanpham.category_id=tbl_category.category_id ORDER BY tbl_sanpham.sanpham_id DESC"); 
-				?> 
-				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal1">Thêm</button>
-				<table class="table table-bordered ">
-					<tr>
-						<th>Thứ tự</th>
-						<th>Tên sản phẩm</th>
-						<th>Hình ảnh</th>
-						<th>Số lượng</th>
-						<th>Danh mục</th>
-						<th>Giá sản phẩm</th>
-						<th>Giá khuyến mãi</th>
-						<th>Quản lý</th>
-					</tr>
-					<?php
-					$i = 0;
-					while($row_sp = mysqli_fetch_array($sql_select_sp)){ 
-						$i++;
-					?> 
-					<tr>
-						<td><?php echo $i ?></td>
-						<td><?php echo $row_sp['sanpham_name'] ?></td>
-						<td><img src="../uploads/<?php echo $row_sp['sanpham_image'] ?>" height="100" width="80"></td>
-						<td><?php echo $row_sp['sanpham_soluong'] ?></td>
-						<td><?php echo $row_sp['category_name'] ?></td>
-						<td><?php echo number_format($row_sp['sanpham_gia']).'vnđ' ?></td>
-						<td><?php echo number_format($row_sp['sanpham_giakhuyenmai']).'vnđ' ?></td>
-						<td><a href="?xoa=<?php echo $row_sp['sanpham_id'] ?>">Xóa</a> || <a href="xulysanpham.php?quanly=capnhat&capnhat_id=<?php echo $row_sp['sanpham_id'] ?>">Cập nhật</a></td>
-					</tr>
-				<?php
-					} 
-					?> 
-				</table>
-			</div>
-		</div>
-
-
-	<div class="row">
-	<div class="col-md-12" style="text-align: center">
-		<nav aria-label="Page navigation example ">
-			<ul class="pagination">
-				<li class="page-item">
-					<a class="page-link" href="#" aria-label="Previous">
-						<span aria-hidden="true">&laquo;</span>
-					</a>
-				</li>
-				<li class="page-item"><a class="page-link" href="#">1</a></li>
-				<li class="page-item"><a class="page-link" href="#">2</a></li>
-				<li class="page-item"><a class="page-link" href="#">3</a></li>
-				<li class="page-item">
-					<a class="page-link" href="#" aria-label="Next">
-						<span aria-hidden="true">&raquo;</span>
-					</a>
-				</li>
-			</ul>
-		</nav>
-	</div>
-
-
+						</div>	 						 										
+						<div >
+							<h4>Liệt kê sản phẩm</h4>
+							<?php
+							$sql_select_sp = mysqli_query($con,"SELECT * FROM tbl_sanpham,tbl_category WHERE tbl_sanpham.category_id=tbl_category.category_id ORDER BY tbl_sanpham.sanpham_id DESC"); 
+							?> 
+							<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal1">Thêm</button>
+							<table class="table table-bordered ">
+								<tr>
+									<th>Thứ tự</th>
+									<th>Tên sản phẩm</th>
+									<th>Hình ảnh</th>
+									<th>Số lượng</th>
+									<th>Danh mục</th>
+									<th>Giá sản phẩm</th>
+									<th>Giá khuyến mãi</th>
+									<th>Quản lý</th>
+								</tr>
+								<?php
+								$i = 0;
+								while($row_sp = mysqli_fetch_array($sql_select_sp)){ 
+									$i++;
+								?> 
+								<tr>
+									<td style="text-align: center;"><?php echo $i ?></td>
+									<td style="width:400px"><?php echo $row_sp['sanpham_name'] ?></td>
+									<td><img src="../uploads/<?php echo $row_sp['sanpham_image'] ?>" height="100" width="80"></td>
+									<td style="text-align: center;"><?php echo $row_sp['sanpham_soluong'] ?></td>
+									<td style="text-align: center;"><?php echo $row_sp['category_name'] ?></td>
+									<td style="text-align: center;"><?php echo number_format($row_sp['sanpham_gia']).'vnđ' ?></td>
+									<td style="text-align: center;"><?php echo number_format($row_sp['sanpham_giakhuyenmai']).'vnđ' ?></td>
+									<td style="text-align: center;"><a href="?xoa=<?php echo $row_sp['sanpham_id'] ?>">Xóa</a> <hr> <a href="capnhatsanpham.php?quanly=capnhat&capnhat_id=<?php echo $row_sp['sanpham_id'] ?>" data-toggle="modal" data-target="#myModal2">Cập nhật</a></td>
+								</tr>
+							<?php
+								} 
+								?> 
+							</table>
+						</div>
 					</div>
-				</div>
-			</div>
-		</div>
+					<div class="row">
+					<div class="col-md-12" style="text-align: center">
+						<nav aria-label="Page navigation example ">
+							<ul class="pagination">
+								<li class="page-item">
+									<a class="page-link" href="#" aria-label="Previous">
+										<span aria-hidden="true">&laquo;</span>
+									</a>
+								</li>
+								<li class="page-item"><a class="page-link" href="#">1</a></li>
+								<li class="page-item"><a class="page-link" href="#">2</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item">
+									<a class="page-link" href="#" aria-label="Next">
+										<span aria-hidden="true">&raquo;</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>		
 	</div>
+
 	
 </body>
 </html>
