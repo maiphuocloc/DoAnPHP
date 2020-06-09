@@ -21,9 +21,6 @@
 </head>
 <body>
 	
-	
-
-
 
 <div class="container">
 		<div class="row">
@@ -138,9 +135,6 @@
 			</div> <!--colmd12-->
 		</div> <!--row-->
 	</div> <!--container-->
-
-
-
 
 
 	<div class="container-fluid">
