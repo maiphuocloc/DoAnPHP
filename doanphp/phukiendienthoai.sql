@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 07, 2020 lúc 11:05 AM
--- Phiên bản máy phục vụ: 10.4.11-MariaDB
--- Phiên bản PHP: 7.2.31
+-- Host: 127.0.0.1
+-- Generation Time: Jun 09, 2020 at 12:47 PM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,14 +19,14 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `phukiendienthoai`
+-- Database: `phukiendienthoai`
 --
 CREATE DATABASE IF NOT EXISTS phukiendienthoai DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE phukiendienthoai;
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_admin`
+-- Table structure for table `tbl_admin`
 --
 
 CREATE TABLE `tbl_admin` (
@@ -36,7 +37,7 @@ CREATE TABLE `tbl_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_admin`
+-- Dumping data for table `tbl_admin`
 --
 
 INSERT INTO `tbl_admin` (`admin_id`, `email`, `password`, `admin_name`) VALUES
@@ -45,7 +46,7 @@ INSERT INTO `tbl_admin` (`admin_id`, `email`, `password`, `admin_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_category`
+-- Table structure for table `tbl_category`
 --
 
 CREATE TABLE `tbl_category` (
@@ -54,7 +55,7 @@ CREATE TABLE `tbl_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_category`
+-- Dumping data for table `tbl_category`
 --
 
 INSERT INTO `tbl_category` (`category_id`, `category_name`) VALUES
@@ -70,7 +71,7 @@ INSERT INTO `tbl_category` (`category_id`, `category_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_donhang`
+-- Table structure for table `tbl_donhang`
 --
 
 CREATE TABLE `tbl_donhang` (
@@ -85,7 +86,7 @@ CREATE TABLE `tbl_donhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_donhang`
+-- Dumping data for table `tbl_donhang`
 --
 
 INSERT INTO `tbl_donhang` (`donhang_id`, `sanpham_id`, `soluong`, `mahang`, `khachhang_id`, `ngaythang`, `tinhtrang`, `huydon`) VALUES
@@ -118,12 +119,18 @@ INSERT INTO `tbl_donhang` (`donhang_id`, `sanpham_id`, `soluong`, `mahang`, `kha
 (37, 27, 1, '6687', 27, '2019-10-09 09:48:42', 1, 2),
 (38, 22, 1, '1125', 27, '2019-10-09 09:47:17', 1, 2),
 (39, 24, 1, '1125', 27, '2019-10-09 09:47:17', 1, 2),
-(40, 20, 1, '555', 27, '2019-10-09 09:50:07', 0, 2);
+(40, 20, 1, '555', 27, '2019-10-09 09:50:07', 0, 2),
+(41, 53, 1, '5566', 29, '2020-06-09 09:43:21', 0, 0),
+(42, 67, 1, '5566', 29, '2020-06-09 09:43:22', 0, 0),
+(43, 61, 1, '5566', 29, '2020-06-09 09:43:22', 0, 0),
+(44, 36, 1, '5566', 29, '2020-06-09 09:43:22', 0, 0),
+(45, 29, 1, '5566', 29, '2020-06-09 09:43:22', 0, 0),
+(46, 53, 1, '3690', 29, '2020-06-09 09:45:58', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_giaodich`
+-- Table structure for table `tbl_giaodich`
 --
 
 CREATE TABLE `tbl_giaodich` (
@@ -138,7 +145,7 @@ CREATE TABLE `tbl_giaodich` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_giaodich`
+-- Dumping data for table `tbl_giaodich`
 --
 
 INSERT INTO `tbl_giaodich` (`giaodich_id`, `sanpham_id`, `soluong`, `magiaodich`, `ngaythang`, `khachhang_id`, `tinhtrangdon`, `huydon`) VALUES
@@ -156,12 +163,18 @@ INSERT INTO `tbl_giaodich` (`giaodich_id`, `sanpham_id`, `soluong`, `magiaodich`
 (14, 27, 1, '6687', '2019-10-09 09:48:42', 27, 1, 2),
 (15, 22, 1, '1125', '2019-10-09 09:47:17', 27, 1, 2),
 (16, 24, 1, '1125', '2019-10-09 09:47:17', 27, 1, 2),
-(17, 20, 1, '555', '2019-10-09 09:50:08', 27, 0, 2);
+(17, 20, 1, '555', '2019-10-09 09:50:08', 27, 0, 2),
+(18, 53, 1, '5566', '2020-06-09 09:43:22', 29, 0, 0),
+(19, 67, 1, '5566', '2020-06-09 09:43:22', 29, 0, 0),
+(20, 61, 1, '5566', '2020-06-09 09:43:22', 29, 0, 0),
+(21, 36, 1, '5566', '2020-06-09 09:43:22', 29, 0, 0),
+(22, 29, 1, '5566', '2020-06-09 09:43:22', 29, 0, 0),
+(23, 53, 1, '3690', '2020-06-09 09:45:58', 29, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_giohang`
+-- Table structure for table `tbl_giohang`
 --
 
 CREATE TABLE `tbl_giohang` (
@@ -173,19 +186,10 @@ CREATE TABLE `tbl_giohang` (
   `soluong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Đang đổ dữ liệu cho bảng `tbl_giohang`
---
-
-INSERT INTO `tbl_giohang` (`giohang_id`, `tensanpham`, `sanpham_id`, `giasanpham`, `hinhanh`, `soluong`) VALUES
-(1, 'Máy giặc Samsung', 26, '105000000', 'm8.jpg', 1),
-(2, 'Galaxy A15', 21, '15000000', 'mk3.jpg', 1),
-(3, 'Ốp lưng trái cây nổi Dành cho Oppo F11,F11 Pro,A9 2020,A5 2020,A1k,Realme 5,Realme 3,Realme 3 Pro,Re', 29, '70000', '1.jpg', 1);
-
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_khachhang`
+-- Table structure for table `tbl_khachhang`
 --
 
 CREATE TABLE `tbl_khachhang` (
@@ -200,7 +204,7 @@ CREATE TABLE `tbl_khachhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_khachhang`
+-- Dumping data for table `tbl_khachhang`
 --
 
 INSERT INTO `tbl_khachhang` (`khachhang_id`, `name`, `phone`, `address`, `note`, `email`, `password`, `giaohang`) VALUES
@@ -213,12 +217,13 @@ INSERT INTO `tbl_khachhang` (`khachhang_id`, `name`, `phone`, `address`, `note`,
 (25, 'Hoàng Kha', '0932023992', '123/123', 'dasdasdas', 'hoangkha@gmail.com', '', 1),
 (26, 'Trương Lưu', '0932023992', '123/123', 'dasdasdas', 'truongluu@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1),
 (27, 'Trương Huệ Mẫn', '0932023992', '123', 'dasdasdasd', 'hueman@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0),
-(28, 'Hoa', '0932023992', '123/123', 'dasdasdads', 'hoa@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0);
+(28, 'Hoa', '0932023992', '123/123', 'dasdasdads', 'hoa@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0),
+(29, 'dfsd', '54345', 'gfhgd', 'dfsd', 'sgs', 'aa0d2a804a3510442f2fd40f2100b054', 0);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_sanpham`
+-- Table structure for table `tbl_sanpham`
 --
 
 CREATE TABLE `tbl_sanpham` (
@@ -236,11 +241,11 @@ CREATE TABLE `tbl_sanpham` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_sanpham`
+-- Dumping data for table `tbl_sanpham`
 --
 
 INSERT INTO `tbl_sanpham` (`sanpham_id`, `category_id`, `sanpham_name`, `sanpham_chitiet`, `sanpham_mota`, `sanpham_gia`, `sanpham_giakhuyenmai`, `sanpham_active`, `sanpham_hot`, `sanpham_soluong`, `sanpham_image`) VALUES
-(29, 23, 'Ốp lưng trái cây nổi Dành cho Oppo F11,F11 Pro,A9 2020,A5 2020,A1k,Realme 5,Realme 3,Realme 3 Pro,Realme 2,Realme 5 Pro,Realme C2,A5s,A7,A3s,F3,F3 Plus,F9,F5,A83,F1s,A71,(Neo 9) A37,(Neo 9s) A39,(F3 Lite) A57', 'Thương hiệu	OEM\r\nXuất xứ thương hiệu	Hong Kong\r\nXuất xứ	Hong Kong\r\nThương hiệu thiết bị phù hợp	Oppo\r\nThiết bị phù hợp	Oppo F3 Plus, Oppo F3, Oppo F1s, Oppo F5, Oppo A71, Oppo A39-Neo 9s, Oppo A57-F3 Lite, Oppo A37-Neo 9, Oppo A83, OPPO F9, Oppo A3s, Oppo A7, Realme 2, Realme 3 Pro, Realme 3, OPPO F11 Pro, OPPO F11, Oppo A5s, Oppo A1K, Realme C2, Realme 5, Realme 5 Pro, Oppo A9 2020, OPPO A5 (2020)\r\nSKU	9045609883143', '\r\n  *  Ốp được làm bằng nhựa dẻo\r\n  * Mặt lưng nhám chống trơn trợt\r\n  *  Sản phẩm là sự kết hợp tinh tế giữa chất liệu nhựa dẻo silicon và hình trái cây nổi\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ..', '70000', '45000', 0, 0, 10, '1.jpg'),
+(29, 23, 'Ốp lưng trái cây nổi\r\ndành cho điện thoại\r\n', 'Thương hiệu	OEM\r\nXuất xứ thương hiệu	Hong Kong\r\nXuất xứ	Hong Kong\r\nThương hiệu thiết bị phù hợp	Oppo\r\nThiết bị phù hợp	Oppo F3 Plus, Oppo F3, Oppo F1s, Oppo F5, Oppo A71, Oppo A39-Neo 9s, Oppo A57-F3 Lite, Oppo A37-Neo 9, Oppo A83, OPPO F9, Oppo A3s, Oppo A7, Realme 2, Realme 3 Pro, Realme 3, OPPO F11 Pro, OPPO F11, Oppo A5s, Oppo A1K, Realme C2, Realme 5, Realme 5 Pro, Oppo A9 2020, OPPO A5 (2020)\r\nSKU	9045609883143', '\r\n  *  Ốp được làm bằng nhựa dẻo\r\n  * Mặt lưng nhám chống trơn trợt\r\n  *  Sản phẩm là sự kết hợp tinh tế giữa chất liệu nhựa dẻo silicon và hình trái cây nổi\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ..', '70000', '45000', 0, 0, 10, '1.jpg'),
 (30, 23, 'Ốp lưng dẻo cho Iphone XS Max - Dragon 03', 'Thương hiệu	OEM\r\nXuất xứ	Việt Nam\r\nThương hiệu thiết bị phù hợp	Apple\r\nThiết bị phù hợp	iPhone XS MAX\r\nSKU	4038834529110', 'Nếu bạn đang sở hữu một chiếc điện thoại Apple Iphone XS Max thời thượng thì chắc hẳn bạn sẽ lo lắng nó sẽ dễ bị trầy xước khi va chạm hay rơi xuống đất. Vìvậy, việc sử dụng ốp lưng để bảo vệ và giữ điện thoại là rất cần thiết..\r\n\r\nKhông những thế, ngoài việc giúp người dùng bảo vệ Chiếc Điện Thoại Con Cưng – Iphone XS Max, ốp lưng còn được xem như một món đồ trang sức cho điện thoại, giúp chủ nhân của nó thể hiện phong cách và cá tính riêng của mình.\r\n\r\nỐp lưng được làm từ chất liệu silicone cao cấp, các cạnh viền ôm khít thân máy.\r\n\r\nViền ốp dẻo, bo kín phần lưng và phần viền máy, bảo vệ chiếc điện thoại của bạn khỏi trầy xước khi vô tình làm rơi máy hay va chạm với vật cứng.\r\n\r\nViền ốp dẻo còn giúp bạn tháo lắp máy dễ dàng mà không lo trầy xước máy.\r\n\r\nCác cạnh viền ốp lưng trong suốt nên dù sử dụng ốp lưng nhưng vẫn giữ được màu sắc và thiết kế của điện thoại.\r\n\r\nCác chi tiết của ốp lưng (camera, nút nguồn, nút âm lượng,lỗ sạc, lỗ cắm tai nghe..) được thiết kế tỉ mỉ, chính xác tới từng chi tiết, giúp bạn sử dụng điện thoại dễ dàng mà không gặp bất kì trở ngại gì.\r\n\r\nĐặc biệt, hình in sắc nét, màu sắc trung thực, đảm bảo không bong tróc, phai màu.\r\n\r\nVà nếu bạn là một người cẩn thận và mong muốn chiếc điện thoại Iphone XSMax của mình luôn như mới, thì sử dụng ốp lưng không chỉ giúp bảo vệ, mà nó còn mang đến cảm giác yên tâm và thoải mái khi sử dụng.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '77000', '74400', 0, 0, 20, '2.jpg'),
 (31, 23, 'Ốp lưng dẻo cho Apple iPhone 7 Plus _Raccoon 01', 'Thương hiệu	OEM\r\nXuất xứ	Việt Nam\r\nThương hiệu thiết bị phù hợp	Apple\r\nThiết bị phù hợp	iPhone 7 Plus\r\nSKU	8156271119452', 'Nếu bạn đang sở hữu một chiếc Smartphone thì chắc hẳn bạn sẽ lo lắng nó sẽ bị trầy xước khi va chạm hay vô tình rơi xuống đất. Vì vậy, việc sử dụng ốp lưng để bảo vệ và giữ cho điện thoại là rất cần thiết.\r\n\r\nKhông những thế, ngoài việc giúp người dùng bảo vệ điện thoại, ốp lưng còn là một món đồ trang sức cho điện thoại, giúp chủ nhân của nó thể hiện phong cách và cá tính riêng của mình.\r\n\r\nỐp lưng được làm từ chất liệu silicone cao cấp, các cạnh viền ôm khít thân máy.\r\n\r\nViền ốp dẻo, bo kín phần lưng và phần viền máy, bảo vệ chiếc điện thoại của bạn khỏi trầy xước khi vô tình làm rơi máy hay va chạm với vật cứng.\r\n\r\nViền ốp dẻo còn giúp bạn tháo lắp máy dễ dàng mà không lo trầy xước máy.\r\n\r\nCác cạnh viền ốp lưng trong suốt nên dù sử dụng ốp lưng nhưng vẫn giữ được màu sắc và thiết kế của điện thoại.\r\n\r\nCác chi tiết của ốp lưng (camera, nút nguồn, nút âm lượng,lỗ sạc, lỗ cắm tai nghe..) được thiết kế tỉ mỉ, chính xác tới từng chi tiết, giúp bạn sử dụng điện thoại dễ dàng mà không gặp bất kì trở ngại gì.\r\n\r\nĐặc biệt, hình in sắc nét, màu sắc trung thực, đảm bảo không bong tróc, phai màu.\r\n\r\nVà nếu bạn là một người cẩn thận và mong muốn chiếc điện thoại của mình luôn như mới, thì sử dụng ốp lưng không chỉ giúp bảo vệ, mà nó còn mang đến cảm giác yên tâm và thoải mái khi sử dụng.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '81000', '79200', 0, 0, 30, '3.jpg'),
 (32, 23, 'Ốp lưng dẻo cho Apple iPhone 7 Plus _XBLLVĐ Boy', 'Thương hiệu	OEM\r\nXuất xứ	Việt Nam\r\nThương hiệu thiết bị phù hợp	Apple\r\nThiết bị phù hợp	iPhone 7 Plus\r\nModel	20 - Apple iPhone 7 Plus- XBLLVĐ Boy\r\nChất liệu	Silicone dẻo\r\nSKU	4546174878077', 'Nếu bạn đang sở hữu một chiếc Smartphone thì chắc hẳn bạn sẽ lo lắng nó sẽ bị trầy xước khi va chạm hay vô tình rơi xuống đất. Vì vậy, việc sử dụng ốp lưng để bảo vệ và giữ cho điện thoại là rất cần thiết.\r\n\r\nKhông những thế, ngoài việc giúp người dùng bảo vệ điện thoại, ốp lưng còn là một món đồ trang sức cho điện thoại, giúp chủ nhân của nó thể hiện phong cách và cá tính riêng của mình.\r\n\r\nỐp lưng được làm từ chất liệu silicone cao cấp, các cạnh viền ôm khít thân máy.\r\n\r\nViền ốp dẻo, bo kín phần lưng và phần viền máy, bảo vệ chiếc điện thoại của bạn khỏi trầy xước khi vô tình làm rơi máy hay va chạm với vật cứng.\r\n\r\nViền ốp dẻo còn giúp bạn tháo lắp máy dễ dàng mà không lo trầy xước máy.\r\n\r\nCác cạnh viền ốp lưng trong suốt nên dù sử dụng ốp lưng nhưng vẫn giữ được màu sắc và thiết kế của điện thoại.\r\n\r\nCác chi tiết của ốp lưng (camera, nút nguồn, nút âm lượng,lỗ sạc, lỗ cắm tai nghe..) được thiết kế tỉ mỉ, chính xác tới từng chi tiết, giúp bạn sử dụng điện thoại dễ dàng mà không gặp bất kì trở ngại gì.\r\n\r\nĐặc biệt, hình in sắc nét, màu sắc trung thực, đảm bảo không bong tróc, phai màu.\r\n\r\nVà nếu bạn là một người cẩn thận và mong muốn chiếc điện thoại của mình luôn như mới, thì sử dụng ốp lưng không chỉ giúp bảo vệ, mà nó còn mang đến cảm giác yên tâm và thoải mái khi sử dụng.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '79000', '77420', 0, 0, 15, '4.jpg'),
@@ -263,12 +268,37 @@ INSERT INTO `tbl_sanpham` (`sanpham_id`, `category_id`, `sanpham_name`, `sanpham
 (51, 20, 'Dây Cáp Sạc Sợi Nylon Loại C (2M USB 3.1)', 'Specification:\r\nColor: Silver / Blue / Rose / Orange / Green (optional)\r\nMaterial: nylon woven + aluminum interface\r\nVoltage: DC 5V\r\nCurrent: 2A\r\nApplies to: type-c interface device\r\nWire: copper wire core\r\nProduct size: Length is 200cm; Wire diameter is 3.8mm\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', 'Thương hiệu	OEM\r\nXuất xứ thương hiệu	China\r\nXuất xứ	China\r\nSKU	8601524468899', '240000', '100000', 0, 0, 100, '21.jpg'),
 (52, 20, 'Dây Cáp USB Hỗ Trợ Sạc Nhanh Type C (2.4A)', 'Thương hiệu	OEM\r\nXuất xứ	China\r\nSKU	3024072277037', 'Description:\r\nColor: red, black, blue\r\nLength: 1m\r\nMaterial: Weaving\r\nCurrent: 2.4A\r\nInterface: type-c\r\nFunction: fast charging, data transmission, double-sided blind insertion\r\n\r\nNotes:\r\n1.The real color of the item may be slightly different from the pictures shown on website caused by many factors such as brightness of your monitor and light brightness.\r\n2.Please allow slight deviation for the measurement data.\r\n3.Thanks for your understanding.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '295000', '120000', 0, 0, 60, '20.jpg'),
 (53, 20, 'Cáp Sạc Collen Apple', 'Thương hiệu	Collen\r\nSKU	7177536223111', '\r\nInterface support: Apple\r\nMaterial: weaving\r\nType: Single loading\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '160000', '130000', 0, 0, 53, '22.jpg'),
-(54, 20, 'Dây Cáp Sạc Micro USB Đồng Bộ (1M)', 'Thương hiệu	OEM\r\nXuất xứ	China\r\nSKU	7168118688954', 'Description:\r\nColor: Black, Red, Rose red, Orange, White, Blue, Green (optional)\r\nLength: 1 meter\r\nInterface: USB2.0\r\nApplicable models: For Andriod phone\r\nProduct Material: ABS\r\nNumber of sub-thread: single head\r\nProduct Size: 5.5 x 4 x 2cm\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '260000', '200000', 0, 0, 40, '23.jpg');
+(54, 20, 'Dây Cáp Sạc Micro USB Đồng Bộ (1M)', 'Thương hiệu	OEM\r\nXuất xứ	China\r\nSKU	7168118688954', 'Description:\r\nColor: Black, Red, Rose red, Orange, White, Blue, Green (optional)\r\nLength: 1 meter\r\nInterface: USB2.0\r\nApplicable models: For Andriod phone\r\nProduct Material: ABS\r\nNumber of sub-thread: single head\r\nProduct Size: 5.5 x 4 x 2cm\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '260000', '200000', 0, 0, 40, '23.jpg'),
+(61, 18, 'USB 3.0 SanDisk Ultra Flair CZ73 - 32GB ', 'Thương hiệu	SanDisk\r\nXuất xứ	Trung Quốc\r\nDung lượng ổ cứng	32GB\r\nTốc độ đọc	Read up to 130MB/s\r\nSKU	6104573052672', 'Phần mềm bảo vệ và chống truy cập trái phép SecureAccess\r\n\r\nThoải mái lưu trữ với dung lượng 16GB\r\n\r\nBạn hoàn tâm yên tâm lưu trữ dữ liệu mà không cần lo lắng usb hết dung lượng. Khả năng lưu trữ 16GB dữ liệu, người dùng có thể sao chép nhiều hơn và sẵn sàng sử dụng bất cứ khi nào bạn cần.\r\n\r\n\r\n\r\nVới phầm mềm SucureAccess độc quyền từ Sandisk, USB SanDisk giúp bạn bảo vệ thư mục riêng trên USB bằng mật khẩu. Ngoài ra, SanDisk RescuePRO and RescuePRO Delux giúp bạn có thể khôi phục các file đã xóa.\r\n\r\nTốc độ truyền tải lớn với giao tiếp USB 3.0\r\n\r\nUSB SanDisk CZ73 Ultra Fit được trang bị cổng kết nối USB3.0 giúp truyền tải dữ liệu với tốc độ nhanh gấp 10 lần so với cổng 2.0. Tốc độ đọc dữ liệu 130Mb/s bạn sẽ tiết kiệm được thời gian khi truyền tải những file dung lượng lớn.\r\n\r\nKhả năng tương thích cao\r\n\r\nCổng USB 3.0  của USB cũng tương thích ngược với USB 2.0.  Bạn có thể kết nối dễ dàng với thiết bị thông qua cổng USB 3.0 và sử dụng ngay mà không cần cài đặt bất kì phần mềm nào.\r\n\r\n * Thủ thuật sử dụng USB đúng cách\r\n\r\n- Hạn chế sự lây lan của virus: Click phải vào USB và chọn Explorer để ngăn chặn sự xâm nhập của virus vào máy, nên quét virus bằng phần mềm trước khi sử dụng.\r\n\r\n- Tránh làm việc trực tiếp với dữ liệu lưu trên ổ USB\r\n\r\n-  Để máy tính khởi động hết các ứng dụng hoàn toàn mới cắm USB vào máy\r\n\r\n- Ngắt USB an toàn: Chọn Eject/ Eject Mobile Disk/ Eject Mass Store Device Safely Remove USB Mass Storage Device trước khi rút USB.\r\n\r\n- Tránh để ổ USB bị rơi, bị va đập, tránh xa khỏi nước, và đừng để ở nơi có nhiệt độ quá cao.\r\n\r\n- Trong trường hợp không may ổ USB bị rơi vào nước, nên sấy khô hoàn toàn và không sử dụng ít nhất trong 48 giờ.\r\n\r\n- Tránh \"FORMAT\" USB nhiều lần để tránh làm giảm lưu lượng của USB.\r\n\r\n* Bao bì sản phẩm có thể bị cắt ra để dán tem bảo hành\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '430000', '230000', 0, 0, 300, '30.jpg'),
+(62, 18, 'USB Team Group C143 Trắng 32GB - USB 3.0', 'Thương hiệu	TEAM GROUP\r\nXuất xứ	Đài Loan\r\nKích thước	\r\n\r\n53.8 x 18 x 9.7 mm\r\nDung lượng ổ cứng	32GB\r\nKết nối USB	USB 3.0\r\nHệ điều hành	Windows10, Windows® 8.1, Windows 8, Windows 7, Mac OS X v.10.6.x+..., Linux v.2.6.x+...\r\nSKU	6102846752731\r\nModel	C143', 'Thiết kế xoay 360 độ\r\n\r\nUSB Team Group C143 Trắng 32GB - USB 3.0 có thiết kế dạng xoay truyền thống. Với thiết kế xoay 360°, để nhẹ nhàng mở cổng kết nối và thu vào trong khi không sử dụng sẽ bảo vệ USB an toàn, hạn chế bụi bẩn và các tác động không mong muốn.\r\n\r\nKết hợp móc khóa tiện lợi, thời trang\r\n\r\nTrên thân USB tích hợp lỗ khoan gắn liền trên nắp xoay của C143 làm cho nó thuận tiện hơn để mang và lưu trữ - giúp người dùng có thể dễ dàng gắn nó vào vòng chìa khóa, ví hoặc túi xách.\r\n\r\nChất liệu thép không gỉ bền bỉ\r\n\r\nNắp xoay được chế tạo từ thép chống gỉ với bề mặt mờ của nắp xoay và bề mặt được khắc dòng trên thân USB giúp chống bám vân tay tăng tính an toàn và bảo mật cá nhân.\r\n\r\nThoải mái lưu trữ\r\n\r\nBạn hoàn tâm yên tâm lưu trữ dữ liệu mà không cần lo lắng USB hết dung lượng. Với dung lượng 32GB cho bạn thoải mái lưu trữ các dữ liệu cần thiết dành cho công việc và giải trí. Sử dụng USB sẽ giúp cho bạn luôn chủ động trong công việc.\r\n\r\nCổng kết nối USB 3.0\r\n\r\nUSB Team Group C143 được trang bị cổng kết nối USB 3.0 với tốc độ giúp truyền tải dữ liệu nhanh hơn gấp nhiều lần so với cổng USB 2.0. Đồng thời, cổng USB 3.0 cũng tương thích ngược với USB 2.0, dễ dàng kết nối với các máy tính bàn hay máy tính xách tay.\r\n\r\nĐáp ứng tiêu chuẩn quốc tế\r\n\r\nSản phẩm được chứng nhận bởi CE, FCC, BSMI và RoHS để đáp ứng các yêu cầu về tiêu chuẩn an toàn ở nhiều quốc gia.\r\n\r\nThủ thuật sử dụng USB đúng cách\r\n\r\n    Hạn chế sự lây lan của virus: Click phải vào USB và chọn Explorer để ngăn chặn sự xâm nhập của virus vào máy, nên quét virus bằng phần mềm trước khi sử dụng.\r\n    Tránh làm việc trực tiếp với dữ liệu lưu trên ổ USB\r\n    Để máy tính khởi động hết các ứng dụng hoàn toàn mới cắm USB vào máy\r\n    Ngắt USB an toàn: Chọn Eject/ Eject Mobile Disk/ Eject Mass Store Device Safely Remove USB Mass Storage Device trước khi rút USB.\r\n    Tránh để ổ USB bị rơi, bị va đập, tránh xa khỏi nước, và đừng để ở nơi có nhiệt độ quá cao.\r\n    Trong trường hợp không may ổ USB bị rơi vào nước, nên sấy khô hoàn toàn và không sử dụng ít nhất trong 48 giờ.\r\n    Tránh \"Format\" USB nhiều lần để tránh làm giảm lưu lượng của USB.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '120000', '100000', 0, 0, 320, '31.jpg'),
+(63, 18, 'USB Lexar JumpDrive S50 Xanh lá 32GB - USB 2.0', 'Thương hiệu	Lexar (Mỹ)\r\nXuất xứ	Trung Quốc\r\nDung lượng ổ cứng	32gb\r\nSKU	3236815027193\r\nModel	s50-32gb', 'USB Lexar JumpDrive S50 - 32GB 2.0 - Xanh lá\r\n\r\nUSB Lexar JumpDrive S50 - 32GB 2.0 - Xanh lá được trang bị chip COB nên có khả năng chống sốc, nước bụi bẩn cho thời gian sử dụng lâu dài. Với dung lượng 32GB, bạn có thể lưu trữ nhiều dữ liệu hơn phục vụ cho công việc của mình. Sản phẩm tương thích với hầu hết thiết bị có hỗ trợ cổng kết nối USB 2.0 như: PC, laptop,\r\n\r\n \r\n\r\nDung lượng 32GB lưu trữ\r\n\r\nUSB Lexar LJDS50-32GB có dung lượng lưu trữ với 32GB, giúp bạn dễ dàng sử dụng và lưu trữ hay chia sẽ các tập tin quan trọng.\r\n\r\nLàm việc hiệu quả hơn với tốc độ đọc/ghi nhanh chóng\r\n\r\nSản phẩm Lexar LJDV10 phù hợp với cổng kết nối 2.0 - có tốc độ đọc dữ liệu là 30MB/s và tốc độ ghi dư liệu là 12MB/s, giúp cho việc truy cập cũng sao chép dữ liệu nhanh chóng và tiện lợi hơn, tiết kiệm được nhiều thời gian và không ngại bất kì thao tác chuyển đổi dữ liệu nào.\r\n\r\nThiết kế nhỏ gọn tiện lợi\r\n\r\nVới thiết kế khá nhỏ gọn của USB Lexar LJDS50 giúp cho người dùng dễ dàng cất giữ trong bất kì đâu như túi áo, ví Thiết kế có nắp, giúp bạn bảo vệ tốt USB. USB Lexar LJDS50-32GB là một sản phẩm rất tiện dụng và vô cùng cá tính cho bạn trẻ năng động, yêu công nghệ.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '115000', '95000', 0, 0, 200, '32.jpg'),
+(64, 18, 'USB OTG SanDisk Ultra Dual Drive m3.0 64GB', 'Thương hiệu	SanDisk\r\nDung lượng ổ cứng	64GB\r\nSKU	4059128835595\r\nModel	m3.0', 'Tốc độ truyền tải lớn với giao tiếp USB 3.0\r\n\r\nUSB OTG SanDisk Ultra 64GB Dual Drive m3.0 (SDDD3-064G-G46) được trang bị cổng kết nối USB 3.0 giúp truyền tải dữ liệu với tốc độ nhanh gấp nhiều lần so với cổng 2.0. Nhờ vậy bạn sẽ tiết kiệm được thời gian khi truyền tải những file dung lượng lớn.\r\n\r\nCổng MicroUSB cho Smartphone chạy hệ điều hành Android\r\n\r\nUSB OTG SanDisk Ultra 64GB Dual Drive m3.0 (SDDD3-064G-G46) sở hữu cổng micro USB cho smartphone chạy hệ điều hành android. Giờ đây, bạn có thể truyền tải dữ liệu từ máy tính đến các thiết bị di động một cách dễ dàng và nhanh chóng.\r\nPhần mềm Sandisk Memory Zone\r\n\r\nVới phần mềm Sandisk Memory Zone trong Google Play, bạn dễ dàng quản lý, sắp xếp file, tài liệu, nhạc, được lưu trữ ở bộ nhớ trong và bộ nhớ ngoài của điện thoại. Bạn cũng có thể sử dụng phần mềm Sandisk Memory Zone để di chuyển, copy tập tin một cách dễ dàng.\r\nThiết kế nhỏ gọn, sử dụng dễ dàng\r\n\r\nUSB OTG SanDisk Ultra 64GB Dual Drive m3.0 (SDDD3-064G-G46) có thiết kế nhỏ gọn giúp bạn dễ dàng mang theo bên mình. Đồng thời, USB sử dụng rất dễ dàng, chỉ cần cắm vào thiết bị là có thể sử dụng.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '220000', '110000', 0, 0, 100, '33.jpg'),
+(65, 18, 'USB 3.0 SanDisk Ultra CZ48 64GB', 'Thương hiệu	SanDisk\r\nXuất xứ	Trung Quốc\r\nDung lượng ổ cứng	64GB\r\nTốc độ đọc	100Mb/s\r\nKết nối USB	USB 3.0\r\nSKU	6100695916564', 'Thiết kế gọn nhẹ\r\n\r\nSản phẩm USB 3.0 SanDisk Ultra CZ48 64GB có thiết thanh kéo trượt, giúp bảo vệ phần cứng khỏi hư hại, đồng thời tránh được trường hợp mất nắp như các USB thông thường. Đồng thời, với lỗ nhỏ trên đầu USB, bạn có thể biến chiếc USB nhỏ nhắn của mình thành một móc khóa xinh xắn.\r\n\r\nPhần mềm bảo vệ và chống truy cập trái phép SecureAccess\r\n\r\nVới phần mềm SucureAccess độc quyền từ SanDisk, USB 3.0 SanDisk Ultra CZ48 64GB giúp bạn bảo vệ thư mục riêng trên thẻ nhớ bằng mật khẩu. Ngoài ra, các tập tin cá nhân của bạn sẽ được bảo vệ an toàn với mã hóa AES 128-bit, nhờ đó bạn có thể chia sẻ USB cùng bạn bè mà không ảnh hưởng đến sự riêng tư.\r\n\r\nDung lượng lưu trữ 64 GB\r\n\r\nUSB có dung lượng 64 GB, đủ để bạn có thể lưu trữ hàng chục, thậm chí hàng trăm các tập tin khác nhau. Giờ đây, mọi thông tin cần thiết sẽ ở bên cạnh bạn khi bạn đi bất cứ đâu\r\n\r\nTốc độ truyền tải lớn với giao tiếp USB 3.0\r\n\r\nUSB 3.0 SanDisk Ultra CZ48 64GB được trang bị cổng kết nối USB3.0 giúp truyền tải dữ liệu với tốc độ nhanh gấp 10 lần so với cổng 2.0. Với tốc độ đọc dữ liệu 100Mb/s bạn sẽ tiết kiệm được thời gian khi truyền tải những file dung lượng lớn.\r\n\r\n* Thủ thuật sử dụng USB đúng cách\r\n\r\n- Hạn chế sự lây lan của virus: Click phải vào USB và chọn Explorer để ngăn chặn sự xâm nhập của virus vào máy, nên quét virus bằng phần mềm trước khi sử dụng.\r\n\r\n- Tránh làm việc trực tiếp với dữ liệu lưu trên ổ USB\r\n\r\n-  Để máy tính khởi động hết các ứng dụng hoàn toàn mới cắm USB vào máy\r\n\r\n- Ngắt USB an toàn: Chọn Eject/ Eject Mobile Disk/ Eject Mass Store Device Safely Remove USB Mass Storage Device trước khi rút USB.\r\n\r\n- Tránh để ổ USB bị rơi, bị va đập, tránh xa khỏi nước, và đừng để ở nơi có nhiệt độ quá cao.\r\n\r\n- Trong trường hợp không may ổ USB bị rơi vào nước, nên sấy khô hoàn toàn và không sử dụng ít nhất trong 48 giờ.\r\n\r\n- Tránh \"FORMAT\" USB nhiều lần để tránh làm giảm lưu lượng của USB.\r\n\r\n* Bao bì sản phẩm có thể bị cắt ra để dán tem bảo hành.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '700000', '600000', 0, 0, 420, '34.jpg'),
+(66, 18, 'USB Toshiba Towadako U364 64GB 3.0 ', 'Thương hiệu	Toshiba\r\nSKU	8178052348226', '\r\n\r\nUSB 3.0 Toshiba TransMemory Mini U364 120Mb/s\r\n\r\n \r\n\r\nUSB 3.0 Toshiba TransMemory Mini U364 giúp bạn mở rộng thêm không gian lưu trữ dữ liệu. Với tốc độ 120MB/s sẽ giúp mọi dữ liệu được chuyển tải nhanh hơn mà không cần phải cần chờ đợi lâu. Đồng thời, kích thước nhỏ gọn rất tiện lợi cho bạn cất giữ và mang theo sử dụng. \r\n\r\n \r\n\r\nThoải mái lưu trữ với dung lượng 32GB/64GB/128GB. Bạn hoàn tâm yên tâm lưu trữ dữ liệu mà không cần lo lắng usb hết dung lượng. \r\n\r\n \r\n\r\nKhả năng lưu trữ dữ liệu, người dùng có thể sao chép nhiều hơn và sẵn sàng sử dụng bất cứ khi nào bạn cần. Tốc độ truyền tải lớn với giao tiếp USB 3.0. USB 3.0 Toshiba TransMemory Mini U364 được trang bị cổng kết nối USB 3.0 giúp truyền tải dữ liệu với tốc độ nhanh gấp 10 lần so với cổng 2.0. \r\n\r\nTốc độ truyền dữ liệu 120Mb/s bạn sẽ tiết kiệm được thời gian khi truyền tải những file dung lượng lớn. \r\n\r\nKhả năng tương thích cao. Cổng USB 3.0 của USB cũng tương thích ngược với USB 2.0. \r\n\r\nBạn có thể kết nối dễ dàng với thiết bị thông qua cổng USB 3.0 và sử dụng ngay mà không cần cài đặt bất kì phần mềm nào.\r\n\r\n \r\n\r\n \r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '600000', '550000', 0, 0, 600, '35.jpg'),
+(67, 17, 'Thẻ Nhớ Micro SD Samsung Evo Plus 64GB', 'Thương hiệu	Samsung\r\nXuất xứ	Trung Quốc\r\nKích thước	15 x 11 x 1 mm\r\nSKU	6304021357421\r\nDung lượng	64GB\r\nDung lượng ổ cứng	64GB\r\nTốc độ ghi	60MB/s\r\nTốc độ đọc	100MB/s\r\nClass	10\r\nModel	MB-MC64DA/APC', 'Dung lượng lưu trữ 64 GB\r\n\r\nThẻ Nhớ Micro SD Samsung Evo Plus U3 64GB Class 10 với dung lượng lưu trữ 64GB, bạn có thể thoải mái lưu trữ rất nhiều những dữ liệu, tập tin khác nhau như hình ảnh, âm thanh, video, tài liệu. Giờ đây, bạn không phải lo lắng vì hết bộ nhớ nữa.\r\n\r\nTốc độ truyền dữ liệu nhanh chóng\r\n\r\nThẻ Nhớ Micro SD Samsung Evo Plus 64GB có tốc độ truyền tối đa lên đến 100MB/s - đọc, 60MB/s - ghi giúp bạn tiết kiệm tối đa thời gian truyền dữ liệu.\r\nTương thích nhiều thiết bị\r\n\r\nThẻ nhớ tương thích với hầu hết các thiết bị hỗ trợ thẻ Micro SD hiện nay. Bạn có thể dễ dàng sử dụng để mở rộng không gian lưu trữ cho các thiết bị di động như điện thoại, máy nghe nhạc, máy ảnh, máy tính bảng.\r\n\r\nThiết kế bền bỉ, gọn nhẹ\r\n\r\nSản phẩm thiết kế chịu được các điều kiện thời tiết khắc nghiệt đặc  biệt có thể tồn tại 72 giờ trong nước biển hay bảo vệ dữ liệu trước trước những nguy cơ gây hại từ tia X. Bên cạnh đó, thẻ nhớ còn tuân thủ các tiêu chuẩn nghiêm ngặt trong việc chống sốc, chống rung, tính ổn định cao. Đồng thời, trọng lượng cực nhẹ và vô cùng nhỏ gọn, bạn có thể mang theo thẻ nhớ và sử dụng ngay khi cần.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '350000', '250000', 0, 0, 500, '36.jpg'),
+(68, 17, 'Thẻ Nhớ Micro SD Samsung Evo Plus 128GB', 'Thương hiệu	Samsung\r\nXuất xứ	Philippines\r\nKích thước	15 x 11 x 1 mm\r\nSKU	6306958577651\r\nDung lượng	128GB\r\nDung lượng ổ cứng	128GB\r\nTốc độ ghi	20MB/s\r\nTốc độ đọc	100MB/s\r\nClass	10\r\nModel	MB-MC128DA/APC\r\nLưu ý	* Bao bì sản phẩm có thể bị cắt ra để dán tem bảo hành.\r\nXuất xứ thương hiệu	Hàn Quốc', 'Dung lượng lưu trữ 64 GB Thẻ Nhớ Micro SD Samsung Evo Plus U3 64GB Class 10 với dung lượng lưu trữ 64GB, bạn có thể thoải mái lưu trữ rất nhiều những dữ liệu, tập tin khác nhau như hình ảnh, âm thanh, video, tài liệu. Giờ đây, bạn không phải lo lắng vì hết bộ nhớ nữa. Tốc độ truyền dữ liệu nhanh chóng Thẻ Nhớ Micro SD Samsung Evo Plus 64GB có tốc độ truyền tối đa lên đến 100MB/s - đọc, 60MB/s - ghi giúp bạn tiết kiệm tối đa thời gian truyền dữ liệu. Tương thích nhiều thiết bị Thẻ nhớ tương thích với hầu hết các thiết bị hỗ trợ thẻ Micro SD hiện nay. Bạn có thể dễ dàng sử dụng để mở rộng không gian lưu trữ cho các thiết bị di động như điện thoại, máy nghe nhạc, máy ảnh, máy tính bảng. Thiết kế bền bỉ, gọn nhẹ Sản phẩm thiết kế chịu được các điều kiện thời tiết khắc nghiệt đặc biệt có thể tồn tại 72 giờ trong nước biển hay bảo vệ dữ liệu trước trước những nguy cơ gây hại từ tia X. Bên cạnh đó, thẻ nhớ còn tuân thủ các tiêu chuẩn nghiêm ngặt trong việc chống sốc, chống rung, tính ổn định cao. Đồng thời, trọng lượng cực nhẹ và vô cùng nhỏ gọn, bạn có thể mang theo thẻ nhớ và sử dụng ngay khi cần. Giá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '1800000', '1500000', 0, 0, 750, '37.jpg'),
+(69, 17, 'Thẻ Nhớ Micro SD Premium Transcend 64GB', 'Thương hiệu	Transcend\r\nXuất xứ	Trung Quốc\r\nKích thước	15 x 11 x 1 mm\r\nSKU	6305810691870\r\nDung lượng ổ cứng	64GB', 'Thẻ Nhớ Micro SD Class 10 Premium Transcend 64GB - 45MB/s\r\n\r\nThẻ Nhớ Micro SD Class 10 Premium Transcend 64GB - 45MB/s sở hữu tính năng plug - play giúp người dùng dễ dàng sử dụng  mà không cần bất cứ cài đặt nào. Nhờ đó bạn có thể sử dụng một cách nhanh chóng. Bên cạnh đó, dung lượng khủng 64GB sẽ mang đến cho bạn không gian khổng lồ lưu trữ các dữ liệu.\r\nThông tin sản phẩm\r\n\r\nThoải mái lưu trữ\r\n\r\nVới khả năng lưu trữ lên đến 64GB bạn có thể thoải mái lưu trữ dữ liệu cho điện thoại hay máy tính bảng của bạn. Giờ đây, bạn có thể hưởng thụ những giây phút thư giãn từ điện thoại của mình như một chiếc máy tính thật sự. Bạn sẽ không còn lo lắng về vấn đề giới hạn lưu trữ của các thiết bị khi sử dụng sản phẩm.\r\n\r\nTốc độ truyền dữ liệu nhanh chóng\r\n\r\nThẻ Transcend sở hữu chuẩn class 10 đang được người dùng rất ưa chuộng. Với tốc độ truyền tải dữ liệu tối đa lên tới 45Mb/s giúp bạn thực hiện mọi tác vụ một cách nhanh chóng.\r\n\r\nTính tương thích cao\r\n\r\nSản phẩm tương thích với hầu hết với các dòng điện thoại có hỗ trợ khe cắm thẻ nhớ micro SD. Các dữ liệu của công việc và giải trí sẽ luôn bên bạn mọi lúc mọi nơi khi bạn cần.\r\n\r\nThiết kế bền bỉ, gọn nhẹ\r\n\r\nSản phẩm thiết kế chịu được các điều kiện thời tiết khắc nghiệt. Bên cạnh đó, thẻ nhớ còn tuân thủ các tiêu chuẩn nghiêm ngặt trong việc chống sốc, chống rung, tính ổn định cao. Đồng thời, trọng lượng cực nhẹ và vô cùng nhỏ gọn, bạn có thể mang theo thẻ nhớ và sử dụng ngay khi cần.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '1000000', '850000', 0, 0, 900, '38.jpg');
+INSERT INTO `tbl_sanpham` (`sanpham_id`, `category_id`, `sanpham_name`, `sanpham_chitiet`, `sanpham_mota`, `sanpham_gia`, `sanpham_giakhuyenmai`, `sanpham_active`, `sanpham_hot`, `sanpham_soluong`, `sanpham_image`) VALUES
+(70, 17, 'Thẻ Nhớ Netac U1 16GB - Hàng Nhập Khẩu', 'Thương hiệu	Netac\r\nSKU	2678046820326\r\nDung lượng	16GB\r\nTốc độ ghi	70MB/s\r\nTốc độ đọc	90MB/s\r\nClass	10\r\nModel	N16G', '\r\n    Thẻ Nhớ Netac U1 với dung lượng 16GB bạn có thể thoải mái lưu trữ các hình ảnh, bài hát, video clip và các dữ liệu cần thiết cho điện thoạicủa mình, không còn phải lo lắng vì đầy bộ nhớ nữa.\r\n    Sản phẩm có thể sử dụng với hầu hết các dòng điện thoại, máy tính bảng có hỗ trợ khe cắm thẻ nhớ micro SD. Bạn sẽ dễ dàng mở rộng bộ nhớ cho các thiết bị của mình.\r\n    Thể có tốc độ đọc lên tới 90MB/s, tốc độ ghi tối đa 70MB/s cho bạn dễ dàng truyền dữ liệu, hình ảnh nhanh chóng.\r\n    Thẻ nhớ được sản xuất từ chất liệu cao cấp, bền bỉ, chống thấm, chống từ tính, chống nhiệt độ cao, chống tia X, giúp gia tăng độ bền và thời gian sử dụng lâu dài cho sản phẩm.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '180000', '70000', 0, 0, 430, '39.jpg'),
+(71, 17, 'Thẻ Nhớ Sandisk Microsdhc Ultra A1 32GB', 'Thương hiệu	SanDisk\r\nXuất xứ	Trung Quốc\r\nSKU	5773951521027\r\nDung lượng	32GB\r\nTốc độ ghi	10-15MB/s\r\nTốc độ đọc	Lên đến 98MB/s\r\nClass	Class 10', 'Tốc độ cực nhanh lên đến 98MB/s\r\n\r\nThẻ Nhớ Sandisk Microsdhc Ultra A1 32Gb 98Mb/s với tốc độ đọc lên đến 98MB/s, thẻ nhớ MicroSD SanDisk Ultra A1 cho phép bạn chuyển hình ảnh độ phân giải cao và video Full HD sang máy tính của bạn mà không cần phải chờ đợi lâu.\r\nTương thích với các thiết bị của bạn\r\n\r\nThẻ nhớ MicroSD SanDisk Ultra A1 tương thích hoàn hảo với điện thoại thông minh và máy tính bảng chạy Android, ngoài ra thẻ này cũng tương thích tuyệt đối với các dòng máy ảnh DSLR.\r\nLoad ứng dụng nhanh hơn với chuẩn tốc độ A1\r\n\r\nVới chuẩn tốc độ mới A1, thẻ nhớ MicroSD SanDisk Ultra A1 được tối ưu hóa cho các ứng dụng, cung cấp tốc độ khởi chạy và hiệu suất ứng dụng nhanh hơn để bạn có thể trải nghiệm ứng dụng nhanh hơn từ điện thoại thông minh của bạn.\r\nHỗ trợ Full HD Video\r\n\r\nVới tốc độ đạt chuẩn Class 10, thẻ nhớ MicroSD SanDisk Ultra A1 cho phép bạn quay phim và phát lại video Full HD mà không mất bất kì khung hình nào. Mở rộng dung lượng lưu trữ cục lớn lên đến 400GB, bạn có thể lưu trữ lên đến 24h video Full HD trước khi bạn phải chuyển các tập tin vào máy tính của bạn.\r\nBack Up dữ liệu của bạn với phần mềm Memory Zone App\r\n\r\nCó sẵn trong cửa hàng Google Play, ứng dụng Memory Zone SanDisk có hơn 2 triệu lượt tải về và cho phép bạn xem, truy cập và sao lưu tất cả các tập tin của bạn từ bộ nhớ điện thoại. Bạn thậm chí có thể thiết lập tự động di chuyển các tập tin từ bộ nhớ trong của điện thoại vào thẻ nhớ của bạn. Một adapter SD đi kèm để chuyển các tập tin từ điện thoại hoặc máy tính bảng của bạn trực tiếp với máy tính của bạn hoặc máy tính Mac.\r\nĐược thiết kế để chịu được điều kiện khắc nghiệt nhất\r\n\r\nThẻ nhớ MicroSD SanDisk Ultra A1 đã được thử nghiệm với rất nhiều qui trình trong nhiều điều kiện rất khắc nghiệt. Không thấm nước, chống nhiệt, chống sốc, chống tia X-ray, và chống từ trường nam châm, vì vậy dữ liệu của bạn luôn luôn được an toàn tuyệt đối.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '300000', '1400000', 0, 0, 200, '40.jpg'),
+(72, 17, 'Thẻ nhớ Hoco TF tốc độ cao Micro - SD - 64G', 'Thương hiệu	Hoco\r\nSKU	2850584801764\r\nDung lượng ổ cứng	64GB\r\nModel	Thẻ nhớ Hoco 64GB', '    Thẻ nhớ Hoco TF tốc độ cao Micro - SD - 64G\r\n    Máy sở hữu chuẩn thẻ class 10, thông số tốc độ thẻ nhớ truyền tải 10MB/s, thông số này càng cao, tốc độ truyền tải dữ liệu càng nhanh.\r\n    Đối với các dòng smartphone và tablet, tốc độ truyền tải class 10 phù hợp để người dùng thực hiện mọi tác vụ một cách nhanh nhạy.\r\n    Thẻ nhớ Hoco có chất lượng tốt, độ bền cao, giảm tối đa nguy cơ bị hỏng, gây mất dữ liệu của bạn.\r\n    Với việc chọn lựa các sản phẩm đến từ các thương hiệu uy tín sẽ giúp mang lại sản phẩm có độ bền, hiệu quả cao, hỗ trợ tốt cho các thiết bị của bạn.\r\n    Dùng được cho các sản phẩm như điện thoại, camera, camera hành chính, máy nghe nhạc....\r\n    Đồng thời, thẻ nhớ ngoài này còn góp phần giải phóng bộ nhớ cho máy, để máy nâng cao hiệu suất làm việc, trải nghiệm hấp dẫn hơn.\r\n    Máy sở hữu chuẩn thẻ class 10, thông số tốc độ thẻ nhớ truyền tải 10MB/s, thông số này càng cao, tốc độ truyền tải dữ liệu càng nhanh.\r\n    Đối với các dòng smartphone và tablet, tốc độ truyền tải class 10 phù hợp để người dùng thực hiện mọi tác vụ một cách nhanh nhạy.\r\n    Thẻ nhớ Hoco có chất lượng tốt, độ bền cao, giảm tối đa nguy cơ bị hỏng, gây mất dữ liệu của bạn.\r\n    Với việc chọn lựa các sản phẩm đến từ các thương hiệu uy tín sẽ giúp mang lại sản phẩm có độ bền, hiệu quả cao, hỗ trợ tốt cho các thiết bị của bạn.\r\n    Dùng được cho các sản phẩm như điện thoại, camera, camera hành chính, máy nghe nhạc....', '800000', '550000', 0, 0, 10000, '41.jpg'),
+(73, 16, 'Camera wifi Yoosee chuẩn 3 râu 11 LED Full HD', 'Thương hiệu	Yoosee\r\nSKU	1438589191380', 'Yoosee là 1 trong những NSX tiên phong trong việc sản xuất và phân phối các dòng Camera Wifi trên thị trường. Nhờ giá thành và chất lượng các sản phẩm Camera của hãng vô cùng tốt, cộng thêm rất nhiều các tính năng tiện ích được tích hợp trên Camera. Không khó hiểu khi đây là thương hiệu Camera wifi phổ biến nhất tại Việt Nam.  Nắm bắt được điều đó, shop cũng rất vinh dự khi phân phối các dòng Camera wifi chính hãng của Yoosee tại thị trường Việt Nam. Hôm nay chúng tôi xin được giới thiệu đến các bạn sản phẩm Camera wifi Yoosee chuẩn 3 râu 11 LED Full HD - hàng chính hãng\r\n\r\nCamera được trang bị 03 Anten cho khả năng thu sóng Wifi tốt nhất trong các sản phẩm Camera Wifi hiện nay trên thị trường. Cùng với nhiều tính năng nổi bật, đây sẽ là 1 sản phẩm đáng tin cậy dành cho bạn:\r\nThiết kế nhỏ gọn\r\n\r\nCamera wifi Yoosee chuẩn 3 râu 11 LED Full HD - hàng chính hãng là mẫu camera ip có chức năng xoay, kiểu dáng nhỏ gọn và được thiết kế hiện đại, thích hợp để lắp đặt tại văn phòng, nhà ở, cửa hà Camera còn có khả năng kết nối wifi không dây, gọn gàng và tiện lợi, kết nối với điện thoại và máy tính bảng nhanh chóng và dễ dàng.\r\nChất lượng hình ảnh cao\r\n\r\nCamera wifi Yoosee chuẩn 3 râu 11 LED Full HD - hàng chính hãng trang bị ống kính có độ phân giải Full HD 1080p (2.0 Megapixel) và có chip IR_Cut, mang đến hình ảnh sáng đẹp, màu sắc rõ ràng không bị tím tái như những mẫu camera đời cũ. Sử dụng chuẩn nén hình ảnh H.264 giúp cho hình ảnh mượt mà hơn.\r\n\r\nThiết bị còn được trang bị 11 đèn hồng ngoại và 1 cảm biến ánh sáng. Khi ánh sáng yếu cảm biến cảm nhận và sẽ bật các đèn hồng ngoại lên để bạn có thể quan sát mọi thứ một cách rõ ràng dù ở khu vực tối hoặc ban đêm\r\nGóc quan sát rộng, điều khiển xoay\r\n\r\nCamera wifi Yoosee chuẩn 3 râu 11 LED Full HD - hàng chính hãng​ cho một góc quan sát lên tới 90 độ, thông qua camera bạn sẽ có góc nhìn bao quát khắp khu vực cần quản lý. Ngoài ra, sản phẩm còn có thể điều khiển xoay ngang 355 độ và xoay dọc lên xuống 120 độ để bạn linh hoạt quan sát mọi nơi.\r\nHỗ trợ thẻ nhớ microSD lên đến 64GB\r\n\r\nĐiểm đáng chú ý tiếp theo của mẫu Camera wifi Yoosee chuẩn 3 râu 11 LED Full HD - hàng chính hãng râu là có hỗ trợ khe cắm thẻ nhớ micro SD (khe thẻ thông dụng hiện nay) lên tới 32GB. Giúp cho việc lưu lại hình ảnh và video trở nên đơn giản hơn bao giờ hết.\r\nTrang bị công nghệ P2P\r\n\r\nCamera wifi Yoosee chuẩn 3 râu 11 LED Full HD - hàng chính hãng râu  sử dụng công nghệ P2P giúp cho việc kết nối giữa camera với hệ thống mạng của bạn giờ đây chỉ vài thao tác trên chiếc điện thoại của bạn là bạn có thể xem được hình ảnh Camera ở mọi lúc mọi nơi\r\nAn toàn vượt trội\r\n\r\nThiết bị được tích hợp microphone và loa, cho âm thanh lớn và rõ ràng mang đến cho bạn chức năng đàm thoại 2 chiều vô cùng tiện lợi,kết hợp cùng chức năng cảnh báo chuyển động sẽ giúp bạn giám sát quản lý dễ dàng hơn.\r\nThông tin nổi bật:\r\n\r\n - Camera quay 360 độ và đàm thoại được 2 chiều\r\n\r\n - Camera có khả năng lắp thẻ nhớ lên đến 32G mà không cần dùng đầu thu & ổ cứng\r\n\r\n - Có khả năng bắt wifi rất xa nhờ 3 râu tích hợp mà không cần đi dây.\r\n\r\n - Có chức năng báo động chống chộm và sét góc nhanh trong nhà\r\n\r\n - Xem được trên tất cả các thiết bị thông minh từ bất cứ đâu khi có mạng 3G và wifi\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '1000000', '700000', 0, 0, 3000, '42jpg.jpg'),
+(75, 16, 'Camera IP Wifi Ezviz C6CN 720P', 'Thương hiệu	Ezviz\r\nSKU	7020679630400', '    Camera quay quét wifi 1 MegaPixel- Hỗ trợ theo dõi chuyển động thông minh - CÓ THÊM CỔNG MẠNG\r\n    Cảm biến 1/4\" Progressive CMOS, Độ phân giải 1280x720P\r\n    Ống kính 4mm@ F2.2, góc nhìn 90°, góc xoay ngang 340°, góc xoay dọc 120°,\r\n    Theo dõi chuyển động thông minh : Camera tự động xoay theo đối tượng chuyển động\r\n    Phát hiện chuyển động thông minh\r\n    Hỗ trợ khe cắm thẻ nhớ đến 128GB\r\n    Tích hợp Micro và Loa - Hỗ trợ đàm thoại 2 chiều với chất lượng âm thanh trung thực\r\n    Hồng ngoại 10m,\r\n    Hỗ trợ wifi + cài đặt wifi thông minh với phần mềm EZVIZ - quá trình cài đặt chỉ mất vài phút với người lần đầu sử dụng\r\n    Kèm adaptor 5V chính hãng\r\n    Thiết kế hiện đại, lắp đặt trong nhà.', '1000000', '850000', 0, 0, 45, '43.jpg'),
+(76, 16, 'Camera Quan Sát Siepem S7001', 'Thương hiệu	Siepem\r\nKích thước	\r\n\r\n    Chiều dài: 20cm\r\n    Chiều rộng: 20cm\r\n    Chiều cao: 20cm\r\n\r\nChất lượng video	1080P\r\nModel	S7001\r\nSKU	5832304818174', 'Camera Quan Sát Siepem S7001 Độ Phân Giải 2.0Mpx\r\n\r\nTHÔNG SỐ KỸ THUẬT:\r\n\r\n    Thương hiệu: SIEPEM\r\n    Màu sắc: Hồng\r\n    Chip xử lý Hisilicon Hi3518E V200 1.2 GHz\r\n    Cảm biến CMOS 2.0MPX\r\n    Tốc độ video: 25 FPS hoặc 30 FPS\r\n    Phát hiện chuyển động\r\n    Hỗ trợ chụp ảnh, NVR\r\n    Giao tiếp 2 chiều\r\n    Hồng ngoại: 10m\r\n    Wifi\r\n    Hỗ trợ báo động qua điện thoại, email\r\n    Hỗ trợ thẻ nhớ\r\n    Phần mềm xem qua điện thoại: P2pcamplus\r\n\r\nTHÔNG TIN:\r\n\r\n    Độ phân giải 2.0 Mpx: Với độ phân giải 2.0Mpx, thiết bị cho phép người dùng quan sát hình ảnh rõ nét, nhận diện được vật thể và con người.\r\n\r\n    Chip xử lý: Với công nghệ chip xử lý HiSilicon Hi3518e, V200, 1.2GHz, Camera Quan Sát Siepem S7001 cho hình ảnh chất lượng cao và rõ nét. Camera sử dụng chip HiSilicon Hi3518e là sự lựa chọn hoàn hảo cho những khách hàng có nhu cầu lắp đặt hệ thống camera quan sát trong nhà – văn phòng – cửa hàng – nhà xưởng.\r\n    Nâng cao tính năng cảm biến hình ảnh: Với độ cảm biến là  1/4 inch - điểm ảnh tiến bộ cảm biến CMOS (2.0MPX), Camera IP Wifi Siepem S7001 cho ra hình ảnh có màu sắc trung thực và độ rộng khi quan sát.\r\n    Chuẩn nén hình ảnh H.264: Với chuẩn nén hình ảnh H.264 này, sản phẩm cho phép người dùng ghi, nén và phát hình ảnh với chất lượng hiển thị cao và đặc biệt là cực kỳ tiết kiệm băng thông.\r\n\r\n    Hỗ trợ công nghệ ONVIF: Công nghệ ONVIF giúp sản phẩm có khả năng tương thích giữa các thiết bị camera có chuẩn ONVIF trên camera quan sát IP, điều đó sẽ giúp người dùng đơn giản hóa việc cài đặt và quản lý trên các đầu ghi hình IP camera khác nhau.\r\n\r\n    Hỗ trợ 2 dòng tỉ lệ hình ảnh: Camera IP Wifi Siepem S7001 nổi bật ở đặc điểm hỗ trợ đến 2 dòng tỉ lệ hình ảnh\r\n\r\n    Hỗ trợ đa dạng giao thức: Camera IP Wifi Siepem S7001 hỗ trợ nhiều loại giao thức mạng như http, TCP/IP, UDP, rtsp.\r\n\r\nTÍNH NĂNG: \r\n\r\n    Hỗ trợ dung lượng thẻ nhớ tối đa 64Gb - TF Card\r\n    Kết nối Wifi với công nghệ IEEE 802.11 b/g/n\r\n    Hỗ trợ cả 2 chế độ WEP và WPA\r\n    Kết nối TCP/IP, RTSP, SMTP, HTTP, FTP, P2P\r\n    Hình ảnh và video độ phân giải cao IR-Cut\r\n    Cho phép quay 355 độ ngang và 90 độ dọc, điều khiển hoặc cài đặt hành trình qua Smartphone.\r\n    12 IR- Leds, xem ban đêm khoảng cách lên tới 10 mét\r\n    Hỗ trợ xem được trên các trình duyệt máy tính \r\n    Sử dụng công nghệ IR- Cut tạo hình trung thực\r\n    Hỗ trợ Hệ điều hành Window, Android, IOS\r\n    Có được FCC, ce, testlab chứng nhận, chất lượng đáng tin cậy.\r\n\r\n \r\n\r\nMột bộ Camera nguyên hộp gồm có:\r\n\r\n    1 Camera IP theo Model.\r\n    1 Bộ nguồn.\r\n    Phụ kiện giá đế lắp đặt, túi vít tắc kê.\r\n', '3000000', '1500000', 0, 0, 600, '44.jpg'),
+(77, 16, 'Camera Wifi Ngoài Trời Ezviz C3W 2MP 1080p ', 'hương hiệu	EZVIZ\r\nSKU	6778717603732', '    Cảm biến hình ảnh: 1/2.8\" CMOS 2.0 Megapixel cho hình ảnh Full HD (1080p) siêu nét\r\n    Ghi hình màu vào ban đêm (Color Night Vision)\r\n    Thiết lập âm thanh báo động theo ý muốn\r\n    Đèn led hồng ngoại tầm nhìn xa ban đêm lên đến 30m\r\n    Ống kính tiêu cự cố định F2.8mm góc nhìn 92 độ\r\n    Ghi hình chuẩn H.264/H.265\r\n    Có sẵn Mic và Loa, đàm thoại 2 chiều\r\n    Kết nối Wifi 2.4GHz với 2 ăngten ngoài\r\n    Có đèn và còi báo động\r\n    Tích hợp khe cắm thẻ nhớ MicroSD tối đa 256Gb\r\n    Thiết kế chuẩn IP67', '4500000', '4000000', 0, 0, 850, '45.jpg'),
+(78, 16, 'Camera IP Wifi Dahua Imou Ranger Pro', 'Thương hiệu	IMOU\r\nSKU	9930928281810', '    Camera IPC-A26HP, hay còn gọi là Imou Ranger Pro là dòng cam ra mắt vào năm 2019 với thiết kế hoàn toàn khác biệt với các dòng camera khác của Dahua trên thị trường hiện nay.\r\n    Độ phân giải 2 MPixel cảm biến CMOS kích thước 1/2.7”, 25/30fps@2.0M(1920×1080)\r\n    Hỗ trợ mã hóa 2 luồng với định dạng H.265 và H.264\r\n    Độ nhạy sáng tối thiểu 0.5lux/F2.2(color),0lux/F2.2(IR on), chế độ ngày đêm(ICR), chống ngược sáng DWDR, tự động cân bằng trắng (AWB), tự động bù sáng (AGC), chống ngược sáng(BLC), Chống nhiễu (3D-DNR) , tầm xa hồng ngoại 10m với công nghệ hồng ngoại thông minh\r\n    Ống kính cố định 3,6mm, quay quét ngang (PAN) 355° tốc độ 100° /s, quay dọc lên xuống -5°- 90° tích hợp míc và loa với chuẩn âm thanh G.711a / G.711u / PCM. Hỗ trợ đàm thoại 2 chiều.\r\n    Tính năng theo dõi thông minh(Smart tracking): Camera được gắn cảm biến để có thể tự xoay và ghi hình theo đối tượng xâm nhập.\r\n    Tính năng Privacy Mask (vùng riêng tư) giúp người dùng có thể ẩn camera đi trong lúc thực hiện các cuộc nói chuyện nội bộ hay chuyện quan trọng mà không muốn bị người khác theo dõi.\r\n    Hỗ trợ khe cắm thẻ nhớ Micro SD, Max 128GB, tích hợp Wi-Fi(IEEE802.11b/g/n) hỗ trợ P2P, chuẩn tương thích ONVIF, Chất liệu vỏ plastic, điện áp DC5V 2A , công suất ', '5000000', '4800000', 0, 0, 900, '46.png'),
+(79, 16, 'Camera IP Wifi Chính Hãng Vitacam VT1080 2.0MP Full HD', 'hương hiệu	Vitacam\r\nSKU	5022812813338', 'Thiết kế nhỏ gọn, hiện đại\r\n\r\nCamera IP Wifi Vitacam VT1080 là dòng camera quan sát bảo vệ gia đình với thiết kế hiện đại phối màu trắng xanh dịu nhẹ, tinh tế tạo điểm nhấn ấn tượng cho không gian nội thất. Bên cạnh đó, sản phẩm với kích thước gọn nhẹ, không chiếm diện tích giúp bạn dễ dàng lắp đặt, bố trí phù hợp với nhu cầu sử dụng của hộ gia đình, công ty, cửa hà\r\nGóc quay rộng, bao quát không gian\r\n\r\nKhả năng xoay ngang 355 độ – xoay dọc 110 độ có thể bao quát tất cả không gian xung quanh. Đặc biệt, chất lượng camera 2.0Mpx với chất lượng hình ảnh HD720p x 1080p mang đến những hình ảnh sắc nét, sống động với chất lượng.\r\nĐèn hồng ngoại hỗ trợ ban đêm\r\n\r\nThiết bị được tích hợp đèn IR Array LED và cảm biến hồng ngoại hỗ trợ quay video ban đêm với chất lượng hình ảnh cực kỳ rõ nét, khoảng cách lên đến 30m.\r\nPhát hiện chuyển động lạ\r\n\r\nCamera được trang bị chức năng phát hiện di chuyển tự động cảnh báo và chụp hình đến người dùng khi có đối tượng xâm nhập đảm bảo an ninh cho gia đình, công ty. Ngoài ra, người dùng có thể đặt lịch thời gian và khoanh vùng theo dõi để camera Vitacam Vr960 nhận biết được chuyển động lạ và thông báo đến người dùng qua tin nhấn, email.\r\nGiao tiếp âm thanh 2 chiều\r\n\r\nBên cạnh chức năng quan sát những gì đang diễn ra theo thời gian thực, thiết bị cho phép bạn trò chuyện với các thành viên khác trong gia đình thông qua điện thoại di động. Khi bạn bấm nút biểu tượng micro trên màn hình, thì micro tích hợp và loa sẽ giúp bạn trò chuyện với mọi người một cách dễ dàng.\r\nXem nhiều màn hình cùng lúc\r\n\r\nHỗ trợ theo dõi lên đến 4 màn hình cùng 1 lúc, dễ dàng, thuận lợi. Bạn cũng có thể tùy chỉnh, lia 4 máy quay cùng lúc mà không lo hiện tượng giật lag. Phần mềm Vitacam được hỗ trợ ngôn ngữ tiếng việc giúp bạn dễ dàng thiết lập và sử dụng.\r\nCông nghệ tua lại video\r\n\r\nKhả năng tua lại video trên Phần mềm Vitacam dễ dàng, mượt mà và nhanh chóng. Bạn có thể tùy chỉnh, xem lại , hỗ trợ điều tra mà không cần phải xem lại video từ đầu đến cuối.\r\nThông số kỹ thuật\r\n\r\n    Dual stream encoding(H.264/MJPEG), AVI format\r\n    Double core 32bit DSP( Chip Hisilicon Huawei)\r\n    Độ phân giải: 2.0 Mpx CMOS sensor, Độ phân giải Full HD 1080p, color:1.0lux/F1.2, b/w:0.1lux/F1\r\n    Xoay 355 độ ngang, xoay dọc 110 độ dọc, điều khiển qua điện thoại\r\n    Đàm thoại 2 chiều qua smart phone với chất lượng loa đàm thoại khá tốt\r\n    With IR-CUT, support day/night switch\r\n    Khung hình: 2.0 megapixels 30fps(Full real time), 1-30fps adjustable,\r\n    Góc lens: 3.6mm megapixel lens\r\n    Đèn hồng ngoại: 11pcs F5 LED, khoảng cách nhìn xa trong đêm 15m\r\n    Hỗ trợ phần mềm xem camera trên điện thoại và máy tính nhiều camera cùng lúc\r\n    Công nghệ truyền tải hình ảnh Đám Mây\r\n    Hỗ trợ phát hiện chuyển động, báo động và chuẩn ONVIF tương thích với các đầu ghi trên thị trường\r\n    Chất liệu: Nhựa\r\n    Kết nối Wifi/LAn, 2 anten wifi\r\n    Chuẩn nén hình ảnh tốt, nhiều chế độ tùy biến, lưu trữ thời gian dài. Với thẻ 32GB lưu được 2 tuần\r\n    Công nghệ tua lại tức thì dễ dàng là điểm nổi bật ở camera ip Vitacam\r\n    Ứng dụng Vitacam, cài đặt dễ dàng trên IOS, ANDROID, Window, Máy Tính…\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '800000', '7400000', 0, 0, 460, '47.jpg'),
+(80, 15, 'Loa Bluetooth Sony SRS-XB12 - Hàng chính hãng', 'Thương hiệu	Sony\r\nXuất xứ thương hiệu	Nhật Bản\r\nXuất xứ	Trung Quốc\r\nKích thước	Đường kính xấp xỉ 74 mm Chiều cao xấp xỉ 92 mm\r\nModel	SRS-XB12\r\nTần số	2,4 GHz\r\nThời gian pin	16 giờ\r\nDung lượng pin	Thời gian sử dụng pin xấp xỉ 16 giờ\r\nTrọng lượng	Xấp xỉ 243 g\r\nSKU	5711554885092', 'Tại CES 2019 hãng Sony đã tung ra 3 sản phẩm loa di động mới nhất của mình và trong đó là loa Loa bluetooth Sony SRS-XB12 với kính thước nhỏ nhất trong 3 sản phẩm cùng với tính đa di năng rất được đánh giá cao.\r\n\r\nThiết kế nhỏ gọn thông minh\r\n\r\nThoạt nhìn, có lẽ ai cũng cảm thấy Loa di động Sony SRS-XB12 rất giống với người tiền nhiệm của mình là chiếc Sony SRS-XB10, vẫn là thiết kế thiên hướng nhỏ nhắn xinh xắn giống một chiếc cốc nhỏ bé, giúp người dùng có thể cầm nắm bằng một tay. Tuy nhiên, nếu quan sát kỹ bạn sẽ thấy thêm những số tính năng mới và trên Loa bluetooth Sony SRS-XB12 sẽ có những điểm mới.\r\nCác nút điều khiển cơ bản của Loa bluetooth Sony SRS-XB12 đã được thay đổi khác với XB10, hãng đã bố trí ở cạnh bên đằng sau của sản phẩm thành một cụm điều khiển độc lập, điều này giúp cho người dùng không phải mất nhiều thời gian để mò tìm những phím bấm tinh chỉnh như XB10 , Các phím bấm được thiết kế chính sác phân bố dễ dàng bấm cũng như ghi nhớ rõ ràng hơn với bề mặt được làm bằng dạng cao su mềm mịn kết hợp đổ nẩy chắc tay tốt hơn.\r\n\r\nLoa Bluetooth Sony SRS-XB12\r\nCòn đối với các cổng kết nối như cổng sạc, cổng kết nối âm thanh qua dây AUX 3.5mm được hãng đặt trong một hốc nhỏ được bịt kít bằng nắp cao cu để tối ưu khả năng chống nước của thiết bị một cách hoàn hảo hơn.\r\nNgoài ra, còn được trang bị thêm với dây đeo có thể tháo rời, bạn sẽ dễ dàng mang loa theo bên mình, thưởng thức nhạc mọi lúc, mọi nơi.\r\nCông nghệ Bluetooth 4.2 & Kết nối 1 chạm NFC\r\n\r\nKhả năng kết nối của Loa bluetooth Sony SRS-XB12 được trang bị tích hợp công nghệ Bluetooth tiên nhất hiện nay là Bluetooth 4.2 đem lại khả năng kết nối hoàn thiện ổn định hơn. Ngoài kết nối Bluetooth hãng còn tích hợp thêm cho Loa di động Sony SRS-XB12 khả năng kết một chạm NFC giúp tăng khả năng kết nối nhanh chóng, tiện lợi hơn chỉ với một thao tác là chạm.\r\nNgoài ra,  Loa bluetooth Sony SRS-XB12 có còn thể kết nối trực tiếp với điện thoại, máy tính bảng hay máy tính qua cổng kết nối dây cắm trực tiếp 3.5mm giúp bạn có thể sử dụng hết tất cả chức năng kết nối hiện nay.\r\nThời lượng pin lên đến 16h\r\n\r\nLoa bluetooth Sony SRS-XB12 được sử viên Pin có dung lượng cao , đem lại khả năng chơi nhạc liên tục lên tới 16 tiếng, một thời lượng Pin quá khủng đối với những chiếc loa di động hiện này , giúp người dùng có thể thoải mái sử dụng mà không phải lo lắng đến vấn đề hết Pin khi chúng ta đang đi du lịch , dã ngoại cắm trại hay những buổi party nho nhỏ cùng với gia đình, bạn bè người thân của chúng ta.\r\n\r\nKhả năng chống nước, chống bụi chuẩn IP67\r\n\r\nVới chuẩn IP67, loa sẽ không hề hấn gì khi bị rơi xuống nước – vì vậy cơn mưa rào bất chợt hoặc nước vô tình đổ vào loa cũng không thành vấn đề.\r\nNgoài ra, bạn có thể mang loa đến hồ bơi, vào rừng rậm, ra sa mạc, hay tới bất cứ đâu bạn thích – dù bề mặt có bụi đến đâu, SRS-XB12 vẫn tưng bừng phát nhạc.\r\n\r\nMang âm nhạc sôi động vào cuộc sống với EXTRABASS \r\n\r\nKhuấy động không gian với EXTRABASS. Bộ tản âm thụ động hoạt động với loa đơn âm để nâng cao chất lượng âm sắc thấp giúp âm trầm hay hơn – dù có kích thước nhỏ gọn. \r\n\r\n     \r\n\r\nKhả năng kết nối với nhiều loa cùng lúc\r\n\r\nKhả năng kết nối nhiều loa cùng một lúc trên Sony SRS-XB12 sẽ tạo nên hiệu ứng âm thanh chất lượng cao mang đến cho bạn những trải nghiệm đặc biệt nhất.\r\n\r\nLoa Bluetooth Sony SRS-XB12                                             Loa Bluetooth Sony SRS-XB12\r\n\r\nLoa bluetooth Sony SRS-XB12 chắc chắn là một sản phẩm đáng mong đợi đến với tay người tiêu dùng.\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '120000', '1000000', 0, 0, 300, '48.jpg'),
+(87, 15, 'Loa Bluetooth Sanag X6 Plus Bản Mở Rộng', 'Thương hiệu	Sanag\r\nXuất xứ thương hiệu	Trung Quốc\r\nModel	Sanag X6 - Plus bản mở rộng\r\nCông suất	3w\r\nThời gian sạc	Thời gian sạc : 3-4h\r\nThời gian pin	10-12 tiếng\r\nKết nối	Bluetooth : 5.0\r\nTrọng lượng	220g\r\nSKU	7050752084028', '    Loa Bluetooth Sanag X6 Plus Bản Mở Rộng\r\n    Model : X6 - Plus bản mở rộng\r\n    Dung lượng pin: 600mAh\r\n    Chống nước: IPX5\r\n    Hỗ trợ thẻ nhớ phát nhạc. Tích hợp công nghệ Extra bass. Thời gian sử dụng pin lên đến 12h\r\n    Microphone : Có\r\n    Bluetooth : 5.0 New\r\n    Khoảng cách kết nối : 10m\r\n    Công suất : 3W\r\n    Thời gian sạc : 3-4h\r\n    Lưu ý khi sử dụng: Nút tăng giảm âm nếu ấn 1 lần sẽ là next và previous .Nếu muốn tăng giảm âm lượng bạn bấm giữ nút tăng âm lượng khoảng 2s\r\n    Trong những bữa tiệc, đặc biệt là tiệc ngoài trời, âm nhạc dường như là điều không thể thiếu. Chiếc loa bluetooth Sanag X6 giúp bạn tân hưởng những giai điệu những bản nhạc một cách trọn vẹn nhất. Thiết kế nhỏ gọn, hợp thời trang với nhiều màu sắc bạn có thể thoái mai lựa chọn. Với công nghệ  Extra Bass tân tiến giúp bạn có trải nghiệm tốt hơn đặc biệt với những bản nhạc EDM. Loa còn được tích hợp với bluetooth 5.0 giúp bạn có thể kết nối với nhiều dòng thiết bị. Ngoài ra, thiết bị còn được trang bị tính năng chống nước vô cùng hữu ích.', '8000000', '7000000', 0, 0, 500, '49.png'),
+(88, 15, 'Loa bluetooth mini hỗ trợ chức năng đồng hồ và báo thức BT506', 'Thương hiệu	Cát Thái\r\nSKU	1961192036330', '    Phiên bản bluetooth 5.0\r\n    Hỗ trợ thẻ nhớ\r\n    Tần số:3.5mm\r\n    dung lượng pin:37v 1600Mah\r\n    cổng kết nối :micro usb\r\n    Chất liệu vỏ:Nhựa\r\n    khoảng cách kết nối:10m\r\n    Màu Sắc:Xanh Lam,Đen,Đỏ,Hồng', '500000', '450000', 0, 0, 1000, '50.jpg'),
+(89, 15, 'Loa Bluetooth Mini', 'Thương hiệu	OEM\r\nSKU	9912908940061', 'Phương thức kết nối: Kết nối Bluetooth\r\nDung lượng pin: 600mAh\r\nTần số: 100HZ-20KHZ\r\nCông suất đầu ra: 5W\r\nTỷ lệ tín hiệu trên nhiễu PSNR: ≥75dB\r\nCách Cung cấp điện: Pin lithium\r\nThời gian chơi: 6 giờ\r\nDung lượng lên tới: 32 GB\r\nPhiên bản Bluetooth: 4.0\r\nKhoảng cách hiệu quả: 10 mét\r\nPhát định dạng: MP3, APE, WMA, FLC, WAV\r\nHỗ trợ APP: Có\r\nĐịnh dạng hỗ trợ: thẻ SD\r\nCách điều chỉnh loa: Ấn nút\r\nKích thước bề ngoài: 77 * 77 * 39\r\nKhối lượng sản phẩm: 273 (KG)', '120000', '100000', 0, 0, 620, '51.jpg'),
+(90, 15, 'Loa Nghe Nhạc Loa Kèn Cổ Điển ', 'Thương hiệu	OEM\r\nXuất xứ thương hiệu	Việt Nam\r\nDung lượng pin	2000 mah\r\nKết nối	bluetooth - kết nối jack 3,5 - cổng usb\r\nSKU	3454013380944', '    Loa nghe nhạc loa kèn cổ điển. Có thể sử dụng kết nối dây AUX để sử dụng cho máy tính, laptop, máy tính bảng,...Sử dụng công nghệ loa đơn, lọc nhiều tiên tiến, đam lại âm thanh vượt cả mong đợi so với các sản phẩm cùng tầm giá. Kiểu dáng cổ điển đậm phong cách Châu Âu\r\n    Kiểu dáng Gramophone nghe nhạc cổ điển\r\n    Hỗ trợ bluetooth - kết nối jack 3,5 - cổng usb\r\n    Kích thước : Cao : 15cm x ngang : 10cm , rông : 9,5cm\r\n    Hỗ trợ thẻ nhớ microSD, ( với định dạng mp3/WMA/APE)\r\n    Hỗ trợ FM để nghe đài\r\n    Có thể trả lời điện thoại khi đang kết nối bluetooth với loa\r\n    Có thể sử dụng kết nối dây AUX để sử dụng cho máy tính, laptop, máy tính bảng,...\r\n    Sử dụng công nghệ loa đơn, lọc nhiều tiên tiến, đam lại âm thanh vượt cả mong đợi so với các sản phẩm cùng tầm giá.\r\n    Kiểu dáng cổ điển đậm phong cách Châu Âu', '400000', '320000', 0, 0, 400, '52.jpg'),
+(91, 15, 'Loa bluetooth Q3', 'hương hiệu	OEM\r\nSKU	5312782095446', 'Kiểu dáng thiết kế nhỏ gọn , được thiết kế một cách tỉ mỉvà sang trọng dễ dàng mang đi\r\n\r\n️ Âm thành to và rõ không có tạp âm\r\n\r\nCông suất âm thanh lớn\r\n\r\nCác tạp âm được lọc triệt để mang lại những trải nghiệm âm thanh rõ nét\r\n\r\n️ Bluetooth 3.0 cho khả năng tương thích với tất cả các dòng điện thoại và máy tính.\r\n\r\nBluetooth phiên bản 3.0 -Bộ sản phẩm bao gồm: 1 loa , 1 cáp sạc cổng usb ( không có cóc sạc)\r\n\r\n-Kích thước: 9.5 x 9.5 x 10.8 (cm)\r\n\r\n-Trọng lượng : 505 gram Có thể đọc được các file :MP3 WMA ,APE,FLAC, WAV\r\n\r\nKết nối: bluetooth , thẻ nhớ sd,line 3.5\r\n\r\nVỏ: Nhựa nhiều màu sắc\r\n\r\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...', '300000', '200000', 0, 0, 300, '53.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_slider`
+-- Table structure for table `tbl_slider`
 --
 
 CREATE TABLE `tbl_slider` (
@@ -279,7 +309,7 @@ CREATE TABLE `tbl_slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_slider`
+-- Dumping data for table `tbl_slider`
 --
 
 INSERT INTO `tbl_slider` (`slider_id`, `slider_image`, `slider_caption`, `slider_active`) VALUES
@@ -287,105 +317,105 @@ INSERT INTO `tbl_slider` (`slider_id`, `slider_image`, `slider_caption`, `slider
 (2, 'b3.jpg', 'Slider 50%', 0);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `tbl_admin`
+-- Indexes for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Chỉ mục cho bảng `tbl_category`
+-- Indexes for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Chỉ mục cho bảng `tbl_donhang`
+-- Indexes for table `tbl_donhang`
 --
 ALTER TABLE `tbl_donhang`
   ADD PRIMARY KEY (`donhang_id`);
 
 --
--- Chỉ mục cho bảng `tbl_giaodich`
+-- Indexes for table `tbl_giaodich`
 --
 ALTER TABLE `tbl_giaodich`
   ADD PRIMARY KEY (`giaodich_id`);
 
 --
--- Chỉ mục cho bảng `tbl_giohang`
+-- Indexes for table `tbl_giohang`
 --
 ALTER TABLE `tbl_giohang`
   ADD PRIMARY KEY (`giohang_id`);
 
 --
--- Chỉ mục cho bảng `tbl_khachhang`
+-- Indexes for table `tbl_khachhang`
 --
 ALTER TABLE `tbl_khachhang`
   ADD PRIMARY KEY (`khachhang_id`);
 
 --
--- Chỉ mục cho bảng `tbl_sanpham`
+-- Indexes for table `tbl_sanpham`
 --
 ALTER TABLE `tbl_sanpham`
   ADD PRIMARY KEY (`sanpham_id`);
 
 --
--- Chỉ mục cho bảng `tbl_slider`
+-- Indexes for table `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
   ADD PRIMARY KEY (`slider_id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `tbl_admin`
+-- AUTO_INCREMENT for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_category`
+-- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_donhang`
+-- AUTO_INCREMENT for table `tbl_donhang`
 --
 ALTER TABLE `tbl_donhang`
-  MODIFY `donhang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `donhang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_giaodich`
+-- AUTO_INCREMENT for table `tbl_giaodich`
 --
 ALTER TABLE `tbl_giaodich`
-  MODIFY `giaodich_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `giaodich_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_giohang`
+-- AUTO_INCREMENT for table `tbl_giohang`
 --
 ALTER TABLE `tbl_giohang`
-  MODIFY `giohang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `giohang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_khachhang`
+-- AUTO_INCREMENT for table `tbl_khachhang`
 --
 ALTER TABLE `tbl_khachhang`
-  MODIFY `khachhang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `khachhang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_sanpham`
+-- AUTO_INCREMENT for table `tbl_sanpham`
 --
 ALTER TABLE `tbl_sanpham`
-  MODIFY `sanpham_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `sanpham_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_slider`
+-- AUTO_INCREMENT for table `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
   MODIFY `slider_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
