@@ -115,8 +115,7 @@
 						<!-- best seller -->
 						<div class="f-grid py-2">
 							<h3 class="agileits-sear-head mb-3">Sản phẩm bán chạy</h3>
-							<div class="box-scroll">
-								<div class="scroll">
+									
 									<?php
 									$sql_product_sidebar = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_hot='0' ORDER BY sanpham_id DESC"); 
 									while($row_sanpham_sidebar = mysqli_fetch_array($sql_product_sidebar)){

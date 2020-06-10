@@ -26,9 +26,11 @@
 	?>
 	<!-- Single Page -->
 	<div class="banner-bootom-w3-agileits py-5">
+		
+
 		<div class="container py-xl-4 py-lg-2">
 			<!-- tittle heading -->
-			
+			<h2>Thông tin sản phẩm </h2>
 			<!-- //tittle heading -->
 			<div class="row">
 				<div class="col-lg-5 col-md-8 single-right-left ">
