@@ -89,7 +89,7 @@
 							</div>
 							<div class="col-md-6">
 							<label>Giá khuyến mãi</label>
-								<input type="text" class="form-control" name="giakhuyenmai" placeholder="Giá khuyến mãi"><br>>                           
+								<input type="text" class="form-control" name="giakhuyenmai" placeholder="Giá khuyến mãi"><br>                         
 								<label>Danh mục</label>
 								<?php
 								$sql_danhmuc = mysqli_query($con,"SELECT * FROM tbl_category ORDER BY category_id DESC"); 
