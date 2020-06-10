@@ -1,6 +1,21 @@
 <?php
 	include('../db/connect.php');
 ?>
+<?php
+	session_start();
+	if(!isset($_SESSION['dangnhap'])){
+		header('Location: index.php');
+	} 
+	if(isset($_GET['login'])){
+ 	$dangxuat = $_GET['login'];
+	 }else{
+	 	$dangxuat = '';
+	 }
+	 if($dangxuat=='dangxuat'){
+	 	session_destroy();
+	 	header('Location: index.php');
+	 }
+?>
 <?php 
 if(isset($_POST['capnhatdonhang'])){
 	$xuly = $_POST['xuly'];
@@ -33,18 +48,26 @@ if(isset($_POST['capnhatdonhang'])){
 	<meta charset="UTF-8">
 	<title>Đơn hàng</title>
 	<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-
 	<link href="../css/admin-dashboard.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="../css/Chart.css" rel="stylesheet" type="text/css" media="all" />
-
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script src="../js/Chart.js"></script>
-
 </head>
 <body>
+<div class="modal fade" id="myModal1" role="dialog">
+		<div class="modal-dialog modal-sm modal-dialog-centered">
+		<div class="modal-content" style="width:auto; height: auto; padding: 10px 30px ; margin-left:-230px">
+			<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Cập nhật sản phẩm</h4>
+			</div>
+			<div class="modal-body">	
+			</div>
+		</div>
+		</div>
+	</div>
 
 	<div class="container-fluid">
 		<div class="row">
@@ -59,19 +82,20 @@ if(isset($_POST['capnhatdonhang'])){
 
 					<div class="panel-heading">
 						<h3 class="panel-title">
-							
+							<span class="glyphicon glyphicon-dashboard"></span> Xin chào: <?php echo $_SESSION['dangnhap'] ?>
 						</h3>
 					</div>
 
 					<div class="panel-body">
-						<div class="row">												
+					<div class="row">						
 						<div class="col-xs-12 col-md-12" style="text-align: center">
+						<a href="dashboard.php" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Thống kê</a>
 						<a href="xulydonhang.php" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Đơn hàng</a>
 						<a href="xulydanhmuc.php" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Danh mục</a>
 						<a href="xulysanpham.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Sản phẩm</a>
 						<a href="xulykhachhang.php" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Lịch sử</a>
 						</div>
-						</div>
+					</div>
 
 						
 						<div>	
@@ -80,7 +104,7 @@ if(isset($_POST['capnhatdonhang'])){
 								$mahang = $_GET['mahang'];
 								$sql_chitiet = mysqli_query($con,"SELECT * FROM tbl_donhang,tbl_sanpham WHERE tbl_donhang.sanpham_id=tbl_sanpham.sanpham_id AND tbl_donhang.mahang='$mahang'");
 								?>
-								<div class="col-md-6">
+								<div >
 								<h4>Xem chi tiết đơn hàng</h4>
 							<form action="" method="POST">
 								<table class="table table-bordered ">
@@ -124,23 +148,16 @@ if(isset($_POST['capnhatdonhang'])){
 									<option value="1">Đã xử lý | Giao hàng</option>
 									<option value="0">Chưa xử lý</option>
 								</select><br>
-
+								
 								<input type="submit" style="width:170px" value="Cập nhật đơn hàng" name="capnhatdonhang" class="btn btn-success">
 							</form>
 								</div>  
 							<?php
-							}else{
-								?> 
-								
-								<div class="col-md-6">
-									<p>Đơn hàng</p>
-								</div>  
-								<?php
-							} 
-							
-								?> 
-							<div class="col-md-6">
+							}
+							?> 
+							<div >
 								<h4>Liệt kê đơn hàng</h4>
+
 								<?php
 								$sql_select = mysqli_query($con,"SELECT * FROM tbl_sanpham,tbl_khachhang,tbl_donhang WHERE tbl_donhang.sanpham_id=tbl_sanpham.sanpham_id AND tbl_donhang.khachhang_id=tbl_khachhang.khachhang_id GROUP BY mahang "); 
 								?> 
@@ -182,7 +199,7 @@ if(isset($_POST['capnhatdonhang'])){
 										} 
 										?></td>
 
-										<td><a href="?xoadonhang=<?php echo $row_donhang['mahang'] ?>">Xóa</a> || <a href="?quanly=xemdonhang&mahang=<?php echo $row_donhang['mahang'] ?>">Xem </a></td>
+										<td><a href="?xoadonhang=<?php echo $row_donhang['mahang'] ?>">Xóa</a> || <a href="xemdonhang.php?quanly=xemdonhang&mahang=<?php echo $row_donhang['mahang'] ?> " data-toggle="modal" data-target="#myModal1">Xem </a></td>
 									</tr>
 									<?php
 									} 

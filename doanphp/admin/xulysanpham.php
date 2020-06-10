@@ -2,6 +2,21 @@
 	include('../db/connect.php');
 ?>
 <?php
+	session_start();
+	if(!isset($_SESSION['dangnhap'])){
+		header('Location: index.php');
+	} 
+	if(isset($_GET['login'])){
+ 	$dangxuat = $_GET['login'];
+	 }else{
+	 	$dangxuat = '';
+	 }
+	 if($dangxuat=='dangxuat'){
+	 	session_destroy();
+	 	header('Location: index.php');
+	 }
+?>
+<?php
 	if(isset($_POST['themsanpham'])){
 		$tensanpham = $_POST['tensanpham'];
 		$hinhanh = $_FILES['hinhanh']['name'];
@@ -54,21 +69,15 @@
 	<!-- <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" /> -->
 	<link href="../css/admin-dashboard.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="../css/Chart.css" rel="stylesheet" type="text/css" media="all" />
-
-	
-
 	<script src="../js/Chart.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
-
 </head>
 <body>	
 	<div class="modal fade" id="myModal1" role="dialog">
 		<div class="modal-dialog modal-sm modal-dialog-centered">
-		<div class="modal-content" style="width: 600px; height: 630px; margin-left:-130px">
+		<div class="modal-content" style="width: auto; height: auto; margin-left:-130px">
 			<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
 			<h4 class="modal-title">Thêm sản phẩm</h4>
@@ -122,7 +131,7 @@
 	</div>
 	<div class="modal fade" id="myModal2" role="dialog">
 		<div class="modal-dialog modal-sm modal-dialog-centered">
-		<div class="modal-content" style="width: 600px; height: 1050px; padding: 10px 30px ; margin-left:-130px">
+		<div class="modal-content" style="width: 600px; height: auto; padding: 10px 30px ; margin-left:-130px">
 			<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
 			<h4 class="modal-title">Cập nhật sản phẩm</h4>
@@ -139,18 +148,20 @@
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h3 class="panel-title">
+							<span class="glyphicon glyphicon-dashboard"></span> Xin chào: <?php echo $_SESSION['dangnhap'] ?>
 						</h3>
 					</div>
 
 					<div class="panel-body">
-						<div class="row">
-							<div style="text-align:center">
-							<a href="xulydonhang.php" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Đơn hàng</a>
-							<a href="xulydanhmuc.php" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Danh mục</a>
-							<a href="xulysanpham.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Sản phẩm</a>
-							<a href="xulykhachhang.php" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Lịch sử</a>
-							</div>
-						</div>	 						 										
+					<div class="row">
+						<div class="col-xs-12 col-md-12" style="text-align: center">
+						<a href="dashboard.php" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Thống kê</a>
+						<a href="xulydonhang.php" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Đơn hàng</a>
+						<a href="xulydanhmuc.php" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Danh mục</a>
+						<a href="xulysanpham.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Sản phẩm</a>
+						<a href="xulykhachhang.php" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Lịch sử</a>
+						</div>
+					</div>						 										
 						<div >
 							<h4 style="float:left">Liệt kê sản phẩm</h4>
 							<?php

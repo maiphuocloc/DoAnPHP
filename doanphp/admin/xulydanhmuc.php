@@ -2,6 +2,21 @@
 	include('../db/connect.php');
 ?>
 <?php
+	session_start();
+	if(!isset($_SESSION['dangnhap'])){
+		header('Location: index.php');
+	} 
+	if(isset($_GET['login'])){
+ 	$dangxuat = $_GET['login'];
+	 }else{
+	 	$dangxuat = '';
+	 }
+	 if($dangxuat=='dangxuat'){
+	 	session_destroy();
+	 	header('Location: index.php');
+	 }
+?>
+<?php
 	if(isset($_POST['themdanhmuc'])){
 		$tendanhmuc = $_POST['danhmuc'];
 		$sql_insert = mysqli_query($con,"INSERT INTO tbl_category(category_name) values ('$tendanhmuc')");
@@ -63,14 +78,14 @@
 
 					<div class="panel-heading">
 						<h3 class="panel-title">
-
+							<span class="glyphicon glyphicon-dashboard"></span> Xin chào: <?php echo $_SESSION['dangnhap'] ?>
 						</h3>
 					</div>
 
 					<div class="panel-body">
-						<div class="row">
-						
+						<div class="row">		
 							<div class="col-xs-12 col-md-12" style="text-align: center">
+							<a href="dashboard.php" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Thống kê</a>
 							<a href="xulydonhang.php" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Đơn hàng</a>
 							<a href="xulydanhmuc.php" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Danh mục</a>
 							<a href="xulysanpham.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Sản phẩm</a>

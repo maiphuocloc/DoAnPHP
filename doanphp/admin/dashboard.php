@@ -68,18 +68,19 @@
 					</div>
 
 					<div class="panel-body">
-						<div class="row">
+					<div class="row">	
 						<div class="col-xs-12 col-md-12" style="text-align: center">
+						<a href="dashboard.php" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Thống kê</a>
 						<a href="xulydonhang.php" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Đơn hàng</a>
 						<a href="xulydanhmuc.php" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Danh mục</a>
 						<a href="xulysanpham.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Sản phẩm</a>
 						<a href="xulykhachhang.php" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Lịch sử</a>
 						</div>
-						</div>
+					</div>
 
 						<canvas id="myChart" width="400" height="130"></canvas>
 						
-						<a href="#" class="btn btn-success btn-lg btn-block" role="button"><span class="glyphicon glyphicon-globe"></span> Website khách hàng</a>
+						<a href="../index.php" class="btn btn-success btn-lg btn-block" role="button"><span class="glyphicon glyphicon-globe"></span> Website khách hàng</a>
 					</div> <!--panel-body-->
 
 				</div> <!--panel-primary-->
