@@ -95,7 +95,7 @@
 			</h3>
 				<?php 
 				if(isset($_SESSION['dangnhap_home'])){
-					echo '<p style="color:#000;">Xin chào bạn: '.$_SESSION['dangnhap_home'].'<a href="index.php?quanly=giohang&dangxuat=1">Đăng xuất</a></p>';
+					echo '<p style="color:#000;">Xin chào bạn: '.$_SESSION['dangnhap_home'].'</p>';
 				}else{
 					echo '';
 				}
